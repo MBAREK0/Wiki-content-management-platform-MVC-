@@ -1,0 +1,16 @@
+{
+    "name": "youcode/wikis",
+    "description": "hello my name is m'barek",
+    "autoload": {
+        "psr-4": {
+            "App\\": "App/"
+        }
+    },
+    "authors": [
+        {
+            "name": "MBAREK0",
+            "email": "elaadraouimbarek2023@gmail.com"
+        }
+    ],
+    "require": {}
+}
