@@ -65,8 +65,8 @@ https://templatemo.com/tm-552-video-catalog
 
             <div id="tm-video-container">
                 <video autoplay muted loop id="tm-video">
-                    <!-- <source src="video/sunset-timelapse-video.mp4" type="video/mp4"> -->
-                        <source src="video/wheat-field.mp4" type="video/mp4">
+                    <source src="video/sunset-timelapse-video.mp4" type="video/mp4">
+                        <source src="assets/video/wheat-field.mp4" type="video/mp4">
                 </video>    
             </div>
             
@@ -80,7 +80,7 @@ https://templatemo.com/tm-552-video-catalog
                         <div class="col-12">
                             <h2 class="tm-page-title mb-4">Our Video Catalog</h2>
                             <div class="tm-categories-container mb-5">
-                                <h3 class="tm-text-primary tm-categories-text">Categories:</h3>
+                                <h3 class="tm-text-primary tm-categories-text">Wiki<sup>TM</sup></h3>
                                 <ul class="nav tm-category-list">
                                     <li class="nav-item tm-category-item"><a href="#" class="nav-link tm-category-link active">All</a></li>
                                     <li class="nav-item tm-category-item"><a href="#" class="nav-link tm-category-link">Drone Shots</a></li>
@@ -96,7 +96,27 @@ https://templatemo.com/tm-552-video-catalog
   
                         <div class="col-lg-4 col-md-6 col-sm-12 tm-catalog-item">
                             <div class="position-relative tm-thumbnail-container">
-                                <img src="img/tn-03.jpg" alt="Image" class="img-fluid tm-catalog-item-img">    
+                                <img src="assets/img/tn-03.jpg" alt="Image" class="img-fluid tm-catalog-item-img">    
+                            </div>                            
+                            <div class="p-4 tm-bg-gray tm-catalog-item-description">
+                                <h3 class="tm-text-primary mb-3 tm-catalog-item-title">Sagittis sodales enim</h3>
+                                <p class="tm-catalog-item-text">You are allowed to use this video catalog for your business websites. 
+                                Please do not make a re-distribution of our template ZIP file on any template collection website.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12 tm-catalog-item">
+                            <div class="position-relative tm-thumbnail-container">
+                                <img src="assets/img/tn-03.jpg" alt="Image" class="img-fluid tm-catalog-item-img">    
+                            </div>                            
+                            <div class="p-4 tm-bg-gray tm-catalog-item-description">
+                                <h3 class="tm-text-primary mb-3 tm-catalog-item-title">Sagittis sodales enim</h3>
+                                <p class="tm-catalog-item-text">You are allowed to use this video catalog for your business websites. 
+                                Please do not make a re-distribution of our template ZIP file on any template collection website.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12 tm-catalog-item">
+                            <div class="position-relative tm-thumbnail-container">
+                                <img src="assets/img/tn-03.jpg" alt="Image" class="img-fluid tm-catalog-item-img">    
                             </div>                            
                             <div class="p-4 tm-bg-gray tm-catalog-item-description">
                                 <h3 class="tm-text-primary mb-3 tm-catalog-item-title">Sagittis sodales enim</h3>
@@ -106,6 +126,7 @@ https://templatemo.com/tm-552-video-catalog
                         </div>
                      
                     </div>
+                    
 
                 </main>
 
@@ -114,7 +135,7 @@ https://templatemo.com/tm-552-video-catalog
 					
                     <div class="col-xl-6 col-lg-12 mb-4 last-wikis">
                         <div class="tm-bg-gray p-5 h-100 last-wiki">
-                            <h3 class="tm-text-primary mb-5" style="color: #666;
+                            <h3 class="tm-text-primary mb-5" style="color: aliceblue;
 							font-size: 2.5rem;
 							text-align: center;">Last Wikis</h3>
 
@@ -155,7 +176,7 @@ https://templatemo.com/tm-552-video-catalog
                     </div>
                     <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12 mb-4">
                         <div class="p-5 tm-bg-gray h-100">
-                            <h3 class="tm-text-primary mb-4">Our Pages</h3>
+                            <h3 class="tm-text-primary mb-4">Last Categories</h3>
                             <ul class="list-unstyled tm-footer-links">
                                 <li><a href="#">Our Videos</a></li>
                                 <li><a href="#">License Terms</a></li>
@@ -169,7 +190,7 @@ https://templatemo.com/tm-552-video-catalog
 
                 <footer class="row pt-5">
                     <div class="col-12">
-                        <p class="text-right">Copyright 2020 The Video Catalog Company 
+                        <p class="text-right" style="color:#666 !important">Copyright 2020 The Video Catalog Company 
                         
                         - Designed by <a href="https://templatemo.com" rel="nofollow" target="_parent">TemplateMo</a></p>
                     </div>
@@ -178,7 +199,7 @@ https://templatemo.com/tm-552-video-catalog
         </div>
 
     </div> <!-- .tm-page-wrap -->
-
+    
     <script src="assets/js/jquery-3.4.1.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script>

@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
     <!-- https://getbootstrap.com/ -->
     <link rel="stylesheet" href="assets/css/templatemo-style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <!--
 	Product Admin CSS Template
 	https://templatemo.com/tm-524-product-admin
@@ -22,97 +23,50 @@
   </head>
 
   <body id="reportsPage">
-    <nav class="navbar navbar-expand-xl">
-      <div class="container h-100">
-        <a class="navbar-brand" href="index.html">
-          <h1 class="tm-site-title mb-0">Product Admin</h1>
-        </a>
-        <button
-          class="navbar-toggler ml-auto mr-0"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <i class="fas fa-bars tm-nav-icon"></i>
-        </button>
+  <nav class="navbar navbar-expand-xl">
+            <div class="container h-100">
+                <a class="navbar-brand" href="index.html">
+                    <h1 class="tm-site-title mb-0">Wiki<sup>TM</sup></h1>
+                </a>
+                <button class="navbar-toggler ml-auto mr-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  
+                </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mx-auto h-100">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">
-                <i class="fas fa-tachometer-alt"></i> Dashboard
-                <span class="sr-only">(current)</span>
-              </a>
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                id="navbarDropdown"
-                role="button"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false">
-                <i class="far fa-file-alt"></i>
-                <span> Reports <i class="fas fa-angle-down"></i> </span>
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Daily Report</a>
-                <a class="dropdown-item" href="#">Weekly Report</a>
-                <a class="dropdown-item" href="#">Yearly Report</a>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="products.html">
-                <i class="fas fa-shopping-cart"></i> Products
-              </a>
-            </li>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link tm-site d-block" href="login.html">Admin</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link d-block" href="login.html">Admin</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link d-block" href="login.html">Admin</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link d-block" href="login.html">Admin, <b>Logout</b></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <p class=" mt-5 mb-5">Welcome back, <b>Admin</b> you can manage wikis,categories and tags here</p>
+                </div>
 
-            <li class="nav-item">
-              <a class="nav-link" href="accounts.html">
-                <i class="far fa-user"></i> Accounts
-              </a>
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                id="navbarDropdown"
-                role="button"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false">
-                <i class="fas fa-cog"></i>
-                <span> Settings <i class="fas fa-angle-down"></i> </span>
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Profile</a>
-                <a class="dropdown-item" href="#">Billing</a>
-                <a class="dropdown-item" href="#">Customize</a>
-              </div>
-            </li>
-          </ul>
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link d-block" href="login.html">
-                Admin, <b>Logout</b>
-              </a>
-            </li>
-          </ul>
+            </div>
         </div>
-      </div>
-    </nav>
-    <div class=" mt-5">
+    <div class="ml-2 mr-2">
       <div class="row tm-content-row">
         
 
         
-        <div class="col-sm-12 col-md-12 col-lg-4 col-xl-3 tm-block-col">
+        <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3 tm-block-col">
           <div class="tm-bg-primary-dark tm-block tm-block-product-categories">
-            <h2 class="tm-block-title">Product Categories</h2>
+            <h2 class="tm-block-title"> Categories</h2>
             <div class="tm-product-table-container">
               <table class="table tm-table-small tm-product-table">
                 <tbody>
@@ -208,14 +162,14 @@
               </table>
             </div>
             <!-- table container -->
-            <button class="btn btn-primary btn-block text-uppercase mb-3">
-              Add new category
-            </button>
+
+            
           </div>
         </div>
-        <div class="col-sm-12 col-md-12 col-lg-8 col-xl-6 tm-block-col">
-          <div class="tm-bg-primary-dark tm-block tm-block-products">
-            <div class="tm-product-table-container">
+        <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 tm-block-col">
+          <div class="tm-bg-primary-dark tm-block tm-block-products" style="min-height: 652px !important;">
+          <h2 class="tm-block-title">Wikis</h2>
+            <div class="tm-product-table-container" style="max-height: 526px;">
               <table class="table table-hover tm-table-small tm-product-table">
                 <thead>
                   <tr>
@@ -364,17 +318,12 @@
               </table>
             </div>
             <!-- table container -->
-            <a
-              href="add-product.html"
-              class="btn btn-primary btn-block text-uppercase mb-3">Add new product</a>
-            <button class="btn btn-primary btn-block text-uppercase">
-              Delete selected products
-            </button>
+          
           </div>
         </div>
-        <div class="col-sm-12 col-md-12 col-lg-4 col-xl-3 tm-block-col">
+        <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3 tm-block-col">
           <div class="tm-bg-primary-dark tm-block tm-block-product-categories">
-            <h2 class="tm-block-title">Product Categories</h2>
+            <h2 class="tm-block-title">Tages</h2>
             <div class="tm-product-table-container">
               <table class="table tm-table-small tm-product-table">
                 <tbody>
@@ -469,42 +418,59 @@
                 </tbody>
               </table>
             </div>
-            <!-- table container -->
-            <button class="btn btn-primary btn-block text-uppercase mb-3">
-              Add new category
-            </button>
+
           </div>
         </div>
         
       </div>
     </div>
-    <div class="tm-bg-primary-dark tm-block tm-block-settings" style="width: 41rem !important;">
-      <h2 class="tm-block-title">Account Settings</h2>
+    
+<div class="container d-flex gap-5 mb-5">
+<div class="tm-bg-primary-dark tm-block tm-block-settings" style="width: 41rem !important;min-height: 0px;">
+      
       <form action="" class="tm-signup-form row">
 
-
-
         <div class="form-group col-lg-6">
-          <label for="phone">Phone</label>
+          <label for="category">category</label>
           <input
-            id="phone"
-            name="phone"
+            id="text"
+            name="category"
             type="tel"
             class="form-control validate"
           />
         </div>
         <div class="form-group col-lg-6">
           <label class="tm-hide-sm">&nbsp;</label>
-          <button
-            type="submit"
-            class="btn btn-primary btn-block text-uppercase"
-          >
-            Update Your Profile
-          </button>
+          <button class="btn btn-primary btn-block text-uppercase mb-3" type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">
+              Add new category
+            </button>
         </div>
 
       </form>
     </div>
+    <div class="tm-bg-primary-dark tm-block tm-block-settings" style="width: 41rem !important;min-height: 0px;">
+    <form action="" class="tm-signup-form row">
+
+    <div class="form-group col-lg-6">
+      <label for="tag">tag</label>
+      <input
+        id="text"
+        name="tag"
+        type="tel"
+        class="form-control validate"
+      />
+    </div>
+    <div class="form-group col-lg-6">
+      <label class="tm-hide-sm">&nbsp;</label>
+      <button class="btn btn-primary btn-block text-uppercase mb-3" type="submit"  data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">
+          Add new tag
+        </button>
+    </div>
+
+    </form>
+    </div>
+</div>
+
     <footer class="tm-footer row tm-mt-small">
       <div class="col-12 font-weight-light">
         <p class="text-center text-white mb-0 px-4 small">
@@ -526,5 +492,6 @@
         });
       });
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   </body>
 </html>

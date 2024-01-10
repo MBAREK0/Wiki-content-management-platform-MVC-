@@ -142,6 +142,7 @@ button:focus {
 .navbar-nav a:hover i {
   color: #f5a623;
 }
+
 .nav-item {
   text-align: center;
 }
@@ -438,8 +439,11 @@ input[type="checkbox"]:focus {
 .tm-block-product-categories {
   min-height: 650px;
 }
+.nav-link{
+  color: aliceblue !important;
+}
 .tm-product-table-container {
-  max-height: 465px;
+      max-height: 526px;
   margin-bottom: 15px;
   overflow-y: scroll;
 }
@@ -551,6 +555,10 @@ input[type="checkbox"]:focus {
 }
 .tm-nav-icon {
   color: #fff;
+}
+.nav-link a:hover{
+  color: #f5a623;
+
 }
 .navbar-toggler:hover .tm-nav-icon {
   color: #f5a623;

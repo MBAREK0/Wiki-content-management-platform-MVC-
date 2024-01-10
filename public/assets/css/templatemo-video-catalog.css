@@ -15,6 +15,7 @@ body {
     font-size: 18px;
     line-height: 2em;
     overflow-x: hidden;
+    background-color: aliceblue;
 }
 .last-wikis{
     display: flex;
@@ -37,7 +38,7 @@ body {
 
 a {
     transition: all 0.3s ease;
-    color: #666;
+    color: aliceblue;
 }
 
 a:hover {
@@ -45,7 +46,7 @@ a:hover {
     text-decoration: none;
 }
 
-h2, p { color: #666666; }
+h2, p { color:aliceblue; }
 
 .tm-site-header {
     position: absolute;
@@ -82,7 +83,7 @@ h2, p { color: #666666; }
     color: white;
 }
 
-.tm-bg-gray { background-color: #F4F4F4; }
+.tm-bg-gray { background-color: #435c70; }
 .tm-text-primary { color: #3399CC; }
 .tm-text-secondary { color: #3CAFAF; }
 
