@@ -18,10 +18,10 @@ class Register{
         // Verify CSRF token
         if (isset($_POST['csrf_token']) || $_POST['csrf_token'] === $_SESSION['csrf_token']) {
 
-           $username = htmlspecialchars($_POST['username']);           
-           $email = htmlspecialchars($_POST['email']);
-           $password = htmlspecialchars($_POST['password']);
-           $verifyPassword = htmlspecialchars($_POST['verify-password']);
+           $username = htmlspecialchars($_POST['username'],ENT_QUOTES);           
+           $email = htmlspecialchars($_POST['email'],ENT_QUOTES);
+           $password = $_POST['password'];
+           $verifyPassword = $_POST['verify-password'];
            if($password === $verifyPassword) {
             $pass = password_hash($password, PASSWORD_DEFAULT);
             
@@ -39,7 +39,7 @@ class Register{
             }
     
 
-        // Clear the CSRF token to prevent reuse
+        // Clear the CSRF token 
         unset($_SESSION['csrf_token']);
      
 

@@ -55,7 +55,7 @@
             </div>
             <div class="row mt-2">
               <div class="col-12">
-                <form action="" method="post" class="tm-login-form">
+                <form action="" method="post" id="reg-form" class="tm-login-form">
                 
                   <div class="form-group">
                     <label for="username">Username</label>

@@ -1,6 +1,8 @@
 
+// validation de Registre 
+
 document.addEventListener('DOMContentLoaded', function() {
-    document.forms[0].onsubmit = function(e) {
+    document.getElementById("reg-form").onsubmit = function(e) {
         const emailInput = document.getElementById('reg-email');
         const passInput = document.getElementById('reg-password');
         const VpassInput = document.getElementById('v-reg-password');

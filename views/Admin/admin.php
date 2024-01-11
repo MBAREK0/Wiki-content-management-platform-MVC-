@@ -15,6 +15,9 @@
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
     <!-- https://getbootstrap.com/ -->
     <link rel="stylesheet" href="assets/css/templatemo-style.css">
+    <!-- font awsome -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>  
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">  
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <!--
 	Product Admin CSS Template
@@ -64,433 +67,199 @@
         
 
         
-        <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3 tm-block-col">
-          <div class="tm-bg-primary-dark tm-block tm-block-product-categories">
-            <h2 class="tm-block-title"> Categories</h2>
-            <div class="tm-product-table-container">
-              <table class="table tm-table-small tm-product-table">
+      <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3 tm-block-col">
+    <div class="tm-bg-primary-dark tm-block tm-block-product-categories">
+        <h2 class="tm-block-title"> Categories</h2>
+        <div class="tm-product-table-container">
+            <table class="table tm-table-small tm-product-table">
                 <tbody>
-                  <tr>
-                    <td class="tm-product-name">Product Category 1</td>
-                    <td class="text-center">
-                      <a href="#" class="tm-product-delete-link">
-                        <i class="far fa-trash-alt tm-product-delete-icon"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="tm-product-name">Product Category 2</td>
-                    <td class="text-center">
-                      <a href="#" class="tm-product-delete-link">
-                        <i class="far fa-trash-alt tm-product-delete-icon"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="tm-product-name">Product Category 3</td>
-                    <td class="text-center">
-                      <a href="#" class="tm-product-delete-link">
-                        <i class="far fa-trash-alt tm-product-delete-icon"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="tm-product-name">Product Category 4</td>
-                    <td class="text-center">
-                      <a href="#" class="tm-product-delete-link">
-                        <i class="far fa-trash-alt tm-product-delete-icon"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="tm-product-name">Product Category 5</td>
-                    <td class="text-center">
-                      <a href="#" class="tm-product-delete-link">
-                        <i class="far fa-trash-alt tm-product-delete-icon"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="tm-product-name">Product Category 6</td>
-                    <td class="text-center">
-                      <a href="#" class="tm-product-delete-link">
-                        <i class="far fa-trash-alt tm-product-delete-icon"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="tm-product-name">Product Category 7</td>
-                    <td class="text-center">
-                      <a href="#" class="tm-product-delete-link">
-                        <i class="far fa-trash-alt tm-product-delete-icon"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="tm-product-name">Product Category 8</td>
-                    <td class="text-center">
-                      <a href="#" class="tm-product-delete-link">
-                        <i class="far fa-trash-alt tm-product-delete-icon"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="tm-product-name">Product Category 9</td>
-                    <td class="text-center">
-                      <a href="#" class="tm-product-delete-link">
-                        <i class="far fa-trash-alt tm-product-delete-icon"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="tm-product-name">Product Category 10</td>
-                    <td class="text-center">
-                      <a href="#" class="tm-product-delete-link">
-                        <i class="far fa-trash-alt tm-product-delete-icon"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="tm-product-name">Product Category 11</td>
-                    <td class="text-center">
-                      <a href="#" class="tm-product-delete-link">
-                        <i class="far fa-trash-alt tm-product-delete-icon"></i>
-                      </a>
-                    </td>
-                  </tr>
+                    <?php foreach($categories as $category) : ?>
+                    <tr>
+                        <td class="tm-product-name"><?php echo $category['category_name']; ?></td>
+                        <td>
+                            <a onclick="setData('<?php echo $category['category_id']; ?>','<?php echo $category['category_name']; ?>','index.php?route=category')"
+                                class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <i class='fas fa-pen' style='color:#394e64'></i>
+                            </a>
+                        </td>
+                        <td class="text-center">
+                            <a href="#">
+                                <i class='fa fa-remove' style='color:#394e64'></i>
+                            </a>
+                        </td>
+                    </tr>
+                    <?php endforeach; ?>
                 </tbody>
-              </table>
-            </div>
-            <!-- table container -->
-
-            
-          </div>
+            </table>
         </div>
-        <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 tm-block-col">
-          <div class="tm-bg-primary-dark tm-block tm-block-products" style="min-height: 652px !important;">
-          <h2 class="tm-block-title">Wikis</h2>
-            <div class="tm-product-table-container" style="max-height: 526px;">
-              <table class="table table-hover tm-table-small tm-product-table">
-                <thead>
-                  <tr>
-                    <th scope="col">&nbsp;</th>
-                    <th scope="col">PRODUCT NAME</th>
-                    <th scope="col">UNIT SOLD</th>
-                    <th scope="col">IN STOCK</th>
-                    <th scope="col">EXPIRE DATE</th>
-                    <th scope="col">&nbsp;</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row"><input type="checkbox" /></th>
-                    <td class="tm-product-name">Lorem Ipsum Product 1</td>
-                    <td>1,450</td>
-                    <td>550</td>
-                    <td>28 March 2019</td>
-                    <td>
-                      <a href="#" class="tm-product-delete-link">
-                        <i class="far fa-trash-alt tm-product-delete-icon"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row"><input type="checkbox" /></th>
-                    <td class="tm-product-name">Lorem Ipsum Product 2</td>
-                    <td>1,250</td>
-                    <td>750</td>
-                    <td>21 March 2019</td>
-                    <td>
-                      <a href="#" class="tm-product-delete-link">
-                        <i class="far fa-trash-alt tm-product-delete-icon"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row"><input type="checkbox" /></th>
-                    <td class="tm-product-name">Lorem Ipsum Product 3</td>
-                    <td>1,100</td>
-                    <td>900</td>
-                    <td>18 Feb 2019</td>
-                    <td>
-                      <a href="#" class="tm-product-delete-link">
-                        <i class="far fa-trash-alt tm-product-delete-icon"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row"><input type="checkbox" /></th>
-                    <td class="tm-product-name">Lorem Ipsum Product 4</td>
-                    <td>1,400</td>
-                    <td>600</td>
-                    <td>24 Feb 2019</td>
-                    <td>
-                      <a href="#" class="tm-product-delete-link">
-                        <i class="far fa-trash-alt tm-product-delete-icon"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row"><input type="checkbox" /></th>
-                    <td class="tm-product-name">Lorem Ipsum Product 5</td>
-                    <td>1,800</td>
-                    <td>200</td>
-                    <td>22 Feb 2019</td>
-                    <td>
-                      <a href="#" class="tm-product-delete-link">
-                        <i class="far fa-trash-alt tm-product-delete-icon"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row"><input type="checkbox" /></th>
-                    <td class="tm-product-name">Lorem Ipsum Product 6</td>
-                    <td>1,000</td>
-                    <td>1,000</td>
-                    <td>20 Feb 2019</td>
-                    <td>
-                      <a href="#" class="tm-product-delete-link">
-                        <i class="far fa-trash-alt tm-product-delete-icon"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row"><input type="checkbox" /></th>
-                    <td class="tm-product-name">Lorem Ipsum Product 7</td>
-                    <td>500</td>
-                    <td>100</td>
-                    <td>10 Feb 2019</td>
-                    <td>
-                      <a href="#" class="tm-product-delete-link">
-                        <i class="far fa-trash-alt tm-product-delete-icon"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row"><input type="checkbox" /></th>
-                    <td class="tm-product-name">Lorem Ipsum Product 8</td>
-                    <td>1,000</td>
-                    <td>600</td>
-                    <td>08 Feb 2019</td>
-                    <td>
-                      <a href="#" class="tm-product-delete-link">
-                        <i class="far fa-trash-alt tm-product-delete-icon"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row"><input type="checkbox" /></th>
-                    <td class="tm-product-name">Lorem Ipsum Product 9</td>
-                    <td>1,200</td>
-                    <td>800</td>
-                    <td>24 Jan 2019</td>
-                    <td>
-                      <a href="#" class="tm-product-delete-link">
-                        <i class="far fa-trash-alt tm-product-delete-icon"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row"><input type="checkbox" /></th>
-                    <td class="tm-product-name">Lorem Ipsum Product 10</td>
-                    <td>1,600</td>
-                    <td>400</td>
-                    <td>22 Jan 2019</td>
-                    <td>
-                      <a href="#" class="tm-product-delete-link">
-                        <i class="far fa-trash-alt tm-product-delete-icon"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row"><input type="checkbox" /></th>
-                    <td class="tm-product-name">Lorem Ipsum Product 11</td>
-                    <td>2,000</td>
-                    <td>400</td>
-                    <td>21 Jan 2019</td>
-                    <td>
-                      <a href="#" class="tm-product-delete-link">
-                        <i class="far fa-trash-alt tm-product-delete-icon"></i>
-                      </a>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <!-- table container -->
-          
-          </div>
-        </div>
-        <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3 tm-block-col">
-          <div class="tm-bg-primary-dark tm-block tm-block-product-categories">
-            <h2 class="tm-block-title">Tages</h2>
-            <div class="tm-product-table-container">
-              <table class="table tm-table-small tm-product-table">
-                <tbody>
-                  <tr>
-                    <td class="tm-product-name">Product Category 1</td>
-                    <td class="text-center">
-                      <a href="#" class="tm-product-delete-link">
-                        <i class="far fa-trash-alt tm-product-delete-icon"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="tm-product-name">Product Category 2</td>
-                    <td class="text-center">
-                      <a href="#" class="tm-product-delete-link">
-                        <i class="far fa-trash-alt tm-product-delete-icon"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="tm-product-name">Product Category 3</td>
-                    <td class="text-center">
-                      <a href="#" class="tm-product-delete-link">
-                        <i class="far fa-trash-alt tm-product-delete-icon"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="tm-product-name">Product Category 4</td>
-                    <td class="text-center">
-                      <a href="#" class="tm-product-delete-link">
-                        <i class="far fa-trash-alt tm-product-delete-icon"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="tm-product-name">Product Category 5</td>
-                    <td class="text-center">
-                      <a href="#" class="tm-product-delete-link">
-                        <i class="far fa-trash-alt tm-product-delete-icon"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="tm-product-name">Product Category 6</td>
-                    <td class="text-center">
-                      <a href="#" class="tm-product-delete-link">
-                        <i class="far fa-trash-alt tm-product-delete-icon"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="tm-product-name">Product Category 7</td>
-                    <td class="text-center">
-                      <a href="#" class="tm-product-delete-link">
-                        <i class="far fa-trash-alt tm-product-delete-icon"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="tm-product-name">Product Category 8</td>
-                    <td class="text-center">
-                      <a href="#" class="tm-product-delete-link">
-                        <i class="far fa-trash-alt tm-product-delete-icon"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="tm-product-name">Product Category 9</td>
-                    <td class="text-center">
-                      <a href="#" class="tm-product-delete-link">
-                        <i class="far fa-trash-alt tm-product-delete-icon"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="tm-product-name">Product Category 10</td>
-                    <td class="text-center">
-                      <a href="#" class="tm-product-delete-link">
-                        <i class="far fa-trash-alt tm-product-delete-icon"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="tm-product-name">Product Category 11</td>
-                    <td class="text-center">
-                      <a href="#" class="tm-product-delete-link">
-                        <i class="far fa-trash-alt tm-product-delete-icon"></i>
-                      </a>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-          </div>
-        </div>
-        
-      </div>
-    </div>
-    
-<div class="container d-flex gap-5 mb-5">
-<div class="tm-bg-primary-dark tm-block tm-block-settings" style="width: 41rem !important;min-height: 0px;">
-      
-      <form action="" class="tm-signup-form row">
-
-        <div class="form-group col-lg-6">
-          <label for="category">category</label>
-          <input
-            id="text"
-            name="category"
-            type="tel"
-            class="form-control validate"
-          />
-        </div>
-        <div class="form-group col-lg-6">
-          <label class="tm-hide-sm">&nbsp;</label>
-          <button class="btn btn-primary btn-block text-uppercase mb-3" type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">
-              Add new category
-            </button>
-        </div>
-
-      </form>
-    </div>
-    <div class="tm-bg-primary-dark tm-block tm-block-settings" style="width: 41rem !important;min-height: 0px;">
-    <form action="" class="tm-signup-form row">
-
-    <div class="form-group col-lg-6">
-      <label for="tag">tag</label>
-      <input
-        id="text"
-        name="tag"
-        type="tel"
-        class="form-control validate"
-      />
-    </div>
-    <div class="form-group col-lg-6">
-      <label class="tm-hide-sm">&nbsp;</label>
-      <button class="btn btn-primary btn-block text-uppercase mb-3" type="submit"  data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">
-          Add new tag
-        </button>
-    </div>
-
-    </form>
     </div>
 </div>
 
-    <footer class="tm-footer row tm-mt-small">
-      <div class="col-12 font-weight-light">
-        <p class="text-center text-white mb-0 px-4 small">
-          Copyright &copy; <b>2018</b> All rights reserved. 
-          
-          Design: <a rel="nofollow noopener" href="https://templatemo.com" class="tm-footer-link">Template Mo</a>
-        </p>
+          <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 tm-block-col">
+            <div class="tm-bg-primary-dark tm-block tm-block-products" style="min-height: 652px !important;">
+              <h2 class="tm-block-title">Wikis</h2>
+              <div class="tm-product-table-container" style="max-height: 526px;">
+                <table class="table table-hover tm-table-small tm-product-table">
+                  <thead>
+                    <tr>
+                      <th scope="col">&nbsp;</th>
+                      <th scope="col">PRODUCT NAME</th>
+                      <th scope="col">UNIT SOLD</th>
+                      <th scope="col">IN STOCK</th>
+                      <th scope="col">EXPIRE DATE</th>
+                      <th scope="col">&nbsp;</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row"><input type="checkbox" /></th>
+                      <td class="tm-product-name">Lorem Ipsum Product 1</td>
+                      <td>1,450</td>
+                      <td>550</td>
+                      <td>28 March 2019</td>
+                      <td>
+                        <a href="#" class="tm-product-delete-link">
+                          <i class="far fa-trash-alt tm-product-delete-icon"></i>
+                        </a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3 tm-block-col">
+            <div class="tm-bg-primary-dark tm-block tm-block-product-categories">
+              <h2 class="tm-block-title">Tages</h2>
+              <div class="tm-product-table-container">
+                <table class="table tm-table-small tm-product-table">
+                  <tbody>
+                    <?php foreach($tags as $tag) : ?>
+                      <tr>
+                        <td class="tm-product-name"><?php echo $tag['tag_name']; ?></td>
+                        <td>
+                          <a onclick="setData('<?php echo $tag['tag_id']; ?>','<?php echo $tag['tag_name']; ?>','index.php?route=tag')" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <i class='fas fa-pen' style='color:#394e64'></i>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="#">
+                            <i class='fa fa-remove' style='color:#394e64'></i>
+                          </a>
+                        </td>
+                      </tr>
+                    <?php endforeach; ?>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
       </div>
-    </footer>
+
+<!-- Form Modal Edit -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">UPDATE</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body" style="background-color: #435c70;">
+                <form action="" method="post" id="update-form" class="tm-signup-form row">
+                  <div style="display:flex !important; justify-content:center; align-items:end; ">
+                    <div class="form-group col-lg-6" style="margin:0;">
+                      <input
+                        id="e-name-modal"
+                        name="TC-name"
+                        type="text"
+                        class="form-control validate"
+                      />
+                      <input
+                        id="e-id-modal"
+                        name="TC-id"
+                        type="hidden"
+                      />
+                    </div>
+                    <button class="btn btn-primary btn-block text-uppercase mb-3" type="submit" name="update-submit" style="width:40%">
+                      save change
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+<!-- End Form Modal Edit -->
+
+        <div class="container d-flex gap-5 mb-5">
+          <div class="tm-bg-primary-dark tm-block tm-block-settings" style="width: 41rem !important; min-height: 0px;">
+            <form action="index.php?route=category" method="post" class="tm-signup-form row">
+              <div class="form-group col-lg-6">
+                <label for="category">category</label>
+                <input
+                  id="text"
+                  name="category"
+                  type="text"
+                  class="form-control validate"
+                />
+              </div>
+              <div class="form-group col-lg-6">
+                <label class="tm-hide-sm">&nbsp;</label>
+                <button class="btn btn-primary btn-block text-uppercase mb-3" type="submit" name="add-submit">
+                  Add new category
+                </button>
+              </div>
+            </form>
+          </div>
+          <div class="tm-bg-primary-dark tm-block tm-block-settings" style="width: 41rem !important; min-height: 0px;">
+            <form action="index.php?route=tag" method="post" class="tm-signup-form row">
+              <div class="form-group col-lg-6">
+                <label for="tag">tag</label>
+                <input
+                  id="text"
+                  name="tag"
+                  type="text"
+                  class="form-control validate"
+                />
+              </div>
+              <div class="form-group col-lg-6">
+                <label class="tm-hide-sm">&nbsp;</label>
+                <button class="btn btn-primary btn-block text-uppercase mb-3" type="submit" name="add-submit">
+                  Add new tag
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+
+        <footer class="tm-footer row tm-mt-small">
+          <div class="col-12 font-weight-light">
+            <p class="text-center text-white mb-0 px-4 small">
+              Copyright &copy; <b>2018</b> All rights reserved.
+            </p>
+          </div>
+        </footer>
+
 
     <script src="assets/js/jquery-3.3.1.min.js"></script>
     <!-- https://jquery.com/download/ -->
     <script src="assets\js/bootstrap.min.js"></script>
     <!-- https://getbootstrap.com/ -->
     <script>
-      $(function() {
-        $(".tm-product-name").on("click", function() {
-          window.location.href = "edit-product.html";
-        });
-      });
+      function setData(id,name,act){
+        var modalInputName =document.getElementById('e-name-modal');
+        var modalInputId =document.getElementById('e-id-modal');
+        var myform =document.getElementById('update-form');
+
+        console.log(myform);
+
+        modalInputName.value = name;
+        modalInputId.value = id;
+        myform.action=act;
+        
+      }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   </body>

@@ -57,15 +57,18 @@
               <div class="col-12">
                 <form action="" method="post" class="tm-login-form">
                   <div class="form-group">
-                    <label for="username">Username</label>
+                    <label for="email">email</label>
                     <input
-                      name="username"
-                      type="text"
+                      name="email"
+                      type="email"
                       class="form-control validate"
-                      id="username"
+                      id="log-email"
                       value=""
                       required
                     />
+                  </div>
+                  <div>
+                  <input type="hidden" name="csrf_token_login" value="<?php echo $csrf; ?>">
                   </div>
                   <div class="form-group mt-3">
                     <label for="password">Password</label>
@@ -73,7 +76,7 @@
                       name="password"
                       type="password"
                       class="form-control validate"
-                      id="password"
+                      id="log-password"
                       value=""
                       required
                     />

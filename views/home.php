@@ -38,14 +38,11 @@ https://templatemo.com/tm-552-video-catalog
                                     </button>
                                     <div class="collapse navbar-collapse tm-nav" id="navbar-nav">
                                         <ul class="navbar-nav text-uppercase">
-                                            <li class="nav-item active">
-                                                <a class="nav-link tm-nav-link" href="#">Videos <span class="sr-only">(current)</span></a>
+                                            <li class="nav-item">
+                                                <a class="nav-link tm-nav-link" href="about.html">Login</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link tm-nav-link" href="about.html">About</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link tm-nav-link" href="contact.html">Contact</a>
+                                                <a class="nav-link tm-nav-link" href="contact.html">SignUp</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -82,11 +79,11 @@ https://templatemo.com/tm-552-video-catalog
                             <div class="tm-categories-container mb-5">
                                 <h3 class="tm-text-primary tm-categories-text">Wiki<sup>TM</sup></h3>
                                 <ul class="nav tm-category-list">
-                                    <li class="nav-item tm-category-item"><a href="#" class="nav-link tm-category-link active">All</a></li>
-                                    <li class="nav-item tm-category-item"><a href="#" class="nav-link tm-category-link">Drone Shots</a></li>
-                                    <li class="nav-item tm-category-item"><a href="#" class="nav-link tm-category-link">Nature</a></li>
-                                    <li class="nav-item tm-category-item"><a href="#" class="nav-link tm-category-link">Actions</a></li>
-                                    <li class="nav-item tm-category-item"><a href="#" class="nav-link tm-category-link">Featured</a></li>
+                                    <li class="nav-item tm-category-item"><a href="?route=home" class="nav-link tm-category-link active">home</a></li>
+                                    <li class="nav-item tm-category-item"><a href="?route=about" class="nav-link tm-category-link">About</a></li>
+                                    <li class="nav-item tm-category-item"><a href="?route=contact" class="nav-link tm-category-link">Contact</a></li>
+                                    <li class="nav-item tm-category-item"><a href="?route=author" class="nav-link tm-category-link">Create wiki</a></li>
+                                    
                                 </ul>
                             </div>        
                         </div>
