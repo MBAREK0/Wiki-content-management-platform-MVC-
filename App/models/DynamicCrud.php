@@ -33,9 +33,9 @@ class DynamicCrud {
         }
     }
 
-    public function read($tableName, $condition = "") {
+    public function read($id,$tableName, $condition = "") {
         try {
-            $query = "SELECT * FROM $tableName";
+            $query = "SELECT * FROM $tableName ORDER BY $id DESC";
             
             if (!empty($condition)) {
                 $query .= " WHERE $condition";

@@ -68,32 +68,39 @@
 
         
       <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3 tm-block-col">
-    <div class="tm-bg-primary-dark tm-block tm-block-product-categories">
-        <h2 class="tm-block-title"> Categories</h2>
-        <div class="tm-product-table-container">
-            <table class="table tm-table-small tm-product-table">
-                <tbody>
-                    <?php foreach($categories as $category) : ?>
+          <div class="tm-bg-primary-dark tm-block tm-block-product-categories">
+              <h2 class="tm-block-title"> Categories</h2>
+              <div class="tm-product-table-container">
+              <table class="table table-hover tm-table-small tm-product-table">
+                  <thead>
                     <tr>
-                        <td class="tm-product-name"><?php echo $category['category_name']; ?></td>
-                        <td>
-                            <a onclick="setData('<?php echo $category['category_id']; ?>','<?php echo $category['category_name']; ?>','index.php?route=category')"
-                                class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                <i class='fas fa-pen' style='color:#394e64'></i>
-                            </a>
-                        </td>
-                        <td class="text-center">
-                            <a href="#">
-                                <i class='fa fa-remove' style='color:#394e64'></i>
-                            </a>
-                        </td>
+                      <th scope="col">name</th>
+                      <th scope="col">edit</th>
+                      <th scope="col">delele</th>
                     </tr>
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
-        </div>
-    </div>
-</div>
+                  </thead>
+                      <tbody>
+                          <?php foreach($categories as $category) : ?>
+                          <tr>
+                              <td class="tm-product-name"><?php echo $category['category_name']; ?></td>
+                              <td>
+                                  <a onclick="setData('<?php echo $category['category_id']; ?>','<?php echo $category['category_name']; ?>','index.php?route=category')"
+                                      class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                      <i class='fas fa-pen' style='color:#394e64'></i>
+                                  </a>
+                              </td>
+                              <td class="text-center">
+                                  <a href="#">
+                                      <i class='fa fa-remove' style='color:#394e64'></i>
+                                  </a>
+                              </td>
+                          </tr>
+                          <?php endforeach; ?>
+                      </tbody>
+                  </table>
+              </div>
+          </div>
+      </div>
 
           <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 tm-block-col">
             <div class="tm-bg-primary-dark tm-block tm-block-products" style="min-height: 652px !important;">
@@ -102,17 +109,17 @@
                 <table class="table table-hover tm-table-small tm-product-table">
                   <thead>
                     <tr>
-                      <th scope="col">&nbsp;</th>
-                      <th scope="col">PRODUCT NAME</th>
-                      <th scope="col">UNIT SOLD</th>
-                      <th scope="col">IN STOCK</th>
-                      <th scope="col">EXPIRE DATE</th>
-                      <th scope="col">&nbsp;</th>
+                      <th scope="col">Title</th>
+                      <th scope="col">Author</th>
+                      <th scope="col">Category</th>
+                      <th scope="col">Created At</th>
+                      <th scope="col">Archifier</th>
+                     
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <th scope="row"><input type="checkbox" /></th>
+                   
                       <td class="tm-product-name">Lorem Ipsum Product 1</td>
                       <td>1,450</td>
                       <td>550</td>
@@ -133,7 +140,14 @@
             <div class="tm-bg-primary-dark tm-block tm-block-product-categories">
               <h2 class="tm-block-title">Tages</h2>
               <div class="tm-product-table-container">
-                <table class="table tm-table-small tm-product-table">
+              <table class="table table-hover tm-table-small tm-product-table">
+                  <thead>
+                    <tr>
+                      <th scope="col">name</th>
+                      <th scope="col">edit</th>
+                      <th scope="col">delele</th>
+                    </tr>
+                  </thead>
                   <tbody>
                     <?php foreach($tags as $tag) : ?>
                       <tr>
@@ -155,7 +169,7 @@
               </div>
             </div>
           </div>
-      </div>
+     
 
 <!-- Form Modal Edit -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -192,7 +206,7 @@
         </div>
 <!-- End Form Modal Edit -->
 
-        <div class="container d-flex gap-5 mb-5">
+        <div class="container d-flex mb-5" style = " justify-content: space-around;">
           <div class="tm-bg-primary-dark tm-block tm-block-settings" style="width: 41rem !important; min-height: 0px;">
             <form action="index.php?route=category" method="post" class="tm-signup-form row">
               <div class="form-group col-lg-6">
