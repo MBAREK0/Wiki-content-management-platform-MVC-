@@ -56,40 +56,44 @@
 
             </div>
         </div>
-        <form action="">
+        <form action="?route=wiki" method="post">
             <div class="tm-bg-primary-dark tm-block tm-block-h-auto">
                 <h1 class="tm-block-title">CREATE A WIKI</h1>
 
                 <div class="mb-3">
-                    <label for="mySelect" style="color: aliceblue;">title</label>
-                    <input type="text"  style="border-radius: 5px; width: 100%;">
+                    <label for="title" style="color: aliceblue;">title</label>
+                    <input type="text" name="title" style="border-radius: 5px; width: 100%;">
                 </div>
 
                 <div class="mb-3">
                     <label for="mySelect" style="color: aliceblue;">you can select one category</label>
-                    <select  style="width: 100%;">
+                    <select  style="width: 100%;" name="category_id">
                         <option value=""></option>
-                        <option value="AL">Alabama</option>
-                        <option value="AK">Alaska</option>
+                        <?php foreach($categories as $category) : ?>
+                        <option value="<?php echo $category['category_id']; ?>"><?php echo $category['category_name']; ?></option>
+                        <?php endforeach; ?>
                       </select>
                 </div>
 
                 <div class="mb-3">
                     <label for="mySelect" style="color: aliceblue;">you can select multiple tags</label>
-                    <select id="mySelect" multiple style="width: 100%; " placeholder="u can">
-                        <option value="1">Option 1</option>
-                        <option value="2">Option 2</option>
-                        <option value="3">Option 3</option>
+                    <select id="mySelect" name="tags[]" multiple style="width: 100%; " placeholder="u can">
+                    <?php foreach($tags as $tag) : ?>
+                        <option value="<?php echo $tag['tag_id']; ?>"><?php echo $tag['tag_name']; ?></option>
+                        <?php endforeach; ?>
                     </select>
                 </div>
-
+                <div class="mb-3">
+                <label for="discreption" style="color: aliceblue; ">Discreption</label>
+                <textarea  name="discreption" style="width:100%;"></textarea>
+               </div>
                <div class="mb-3">
                 <label for="summernote" style="color: aliceblue;">what do you think !</label>
-                <div id="summernote" style="margin-top: 31px !important;"></div>
+                <textarea id="summernote" name="content" style="margin-top: 31px !important;"></textarea>
                </div>
                 <div class="form-group col-lg-4">
                     <label class="tm-hide-sm">&nbsp;</label>
-                    <button type="submit" class="btn btn-primary btn-block text-uppercase">Update Your Profile</button>
+                    <button type="submit" name ="add-submit" class="btn btn-primary btn-block text-uppercase">Add New Wiki</button>
                 </div>
             </div>
         </form>

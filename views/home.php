@@ -90,37 +90,17 @@ https://templatemo.com/tm-552-video-catalog
                     </div>
                     
                     <div class="row tm-catalog-item-list">
-  
+                    <?php foreach($wikis as $wiki) : ?>
                         <div class="col-lg-4 col-md-6 col-sm-12 tm-catalog-item">
                             <div class="position-relative tm-thumbnail-container">
                                 <img src="assets/img/tn-03.jpg" alt="Image" class="img-fluid tm-catalog-item-img">    
                             </div>                            
                             <div class="p-4 tm-bg-gray tm-catalog-item-description">
-                                <h3 class="tm-text-primary mb-3 tm-catalog-item-title">Sagittis sodales enim</h3>
-                                <p class="tm-catalog-item-text">You are allowed to use this video catalog for your business websites. 
-                                Please do not make a re-distribution of our template ZIP file on any template collection website.</p>
+                                <h3 class="tm-text-primary mb-3 tm-catalog-item-title"><?php echo $wiki['title'] ; ?></h3>
+                                <p class="tm-catalog-item-text"><?php  $wiki['content'] ?></p>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-6 col-sm-12 tm-catalog-item">
-                            <div class="position-relative tm-thumbnail-container">
-                                <img src="assets/img/tn-03.jpg" alt="Image" class="img-fluid tm-catalog-item-img">    
-                            </div>                            
-                            <div class="p-4 tm-bg-gray tm-catalog-item-description">
-                                <h3 class="tm-text-primary mb-3 tm-catalog-item-title">Sagittis sodales enim</h3>
-                                <p class="tm-catalog-item-text">You are allowed to use this video catalog for your business websites. 
-                                Please do not make a re-distribution of our template ZIP file on any template collection website.</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-sm-12 tm-catalog-item">
-                            <div class="position-relative tm-thumbnail-container">
-                                <img src="assets/img/tn-03.jpg" alt="Image" class="img-fluid tm-catalog-item-img">    
-                            </div>                            
-                            <div class="p-4 tm-bg-gray tm-catalog-item-description">
-                                <h3 class="tm-text-primary mb-3 tm-catalog-item-title">Sagittis sodales enim</h3>
-                                <p class="tm-catalog-item-text">You are allowed to use this video catalog for your business websites. 
-                                Please do not make a re-distribution of our template ZIP file on any template collection website.</p>
-                            </div>
-                        </div>
+                        <?php endforeach ; ?>
                      
                     </div>
                     

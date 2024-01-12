@@ -26,6 +26,7 @@ class Login{
                     print_r($mosel_check->error);
                     if ($check) {
                      $_SESSION['email'] =$check['email'] ;
+                     $_SESSION['user_id'] =$check['user_id'] ;
                      $_SESSION['username'] =$check['user_name'] ;
                      $_SESSION['role'] =$check['role'] ;
                      

@@ -29,8 +29,8 @@ CREATE TABLE Wikis (
     author_id INT,
     category_id INT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (author_id) REFERENCES Users(user_id),
-    FOREIGN KEY (category_id) REFERENCES Categories(category_id)
+    FOREIGN KEY (author_id) REFERENCES Users(user_id) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (category_id) REFERENCES Categories(category_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 -- Table  relation
@@ -38,8 +38,8 @@ CREATE TABLE WikiTags (
     wiki_id INT,
     tag_id INT,
     PRIMARY KEY (wiki_id, tag_id),
-    FOREIGN KEY (wiki_id) REFERENCES Wikis(wiki_id),
-    FOREIGN KEY (tag_id) REFERENCES Tags(tag_id)
+    FOREIGN KEY (wiki_id) REFERENCES Wikis(wiki_id) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (tag_id) REFERENCES Tags(tag_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 

@@ -15,14 +15,14 @@ class Autho_model{
     }
     public function insert($username, $email, $pass){
         try {
-            $sql = "INSERT INTO `wikis`.`users` (`user_name`, `email`, `password_hash`) VALUES (:username, :email, :pass)";
+            $sql = "INSERT INTO `users` (`user_name`, `email`, `password_hash`,`role`) VALUES (:username, :email, :pass,'author')";
             $stmt = $this->conn->prepare($sql);
             $stmt->bindParam(':username', $username, PDO::PARAM_STR);
             $stmt->bindParam(':email', $email, PDO::PARAM_STR);
             $stmt->bindParam(':pass', $pass, PDO::PARAM_STR);
             $stmt->execute();
     
-            return $stmt->rowCount();
+            return true;
         } catch (PDOException $e) {
             $this->error = "Error: " . $e->getMessage();
             return false;

@@ -2,7 +2,7 @@
 
 namespace App\controllers\Admin;
 
-use App\models\DynamicCrud;
+use App\models\CategoryModel;
 
 class CategoryController
 {
@@ -13,8 +13,8 @@ class CategoryController
             $this->create();
         } else if (isset($_POST["update-submit"])) {
             $this->update();
-        } else if (isset($_POST["delete-submit"])) {
-            $this->delete();
+        } else if (isset($_GET["catid"])) {
+            $this->delete($_GET["catid"]);
         }
     }
 
@@ -23,8 +23,8 @@ class CategoryController
         // Handle the create logic here
         if (isset($_POST["add-submit"])) {
            $cat_name['category_name'] =htmlspecialchars($_POST["category"],ENT_QUOTES); 
-           $add_modal = new DynamicCrud;
-           $add_cat = $add_modal->create('categories', $cat_name);
+           $add_modal = new CategoryModel;
+           $add_cat = $add_modal->create($cat_name);
            if($add_cat){
               header('Location: ?route=dash');
            }else{
@@ -42,8 +42,8 @@ class CategoryController
         if (isset($_POST["update-submit"])) {
             $cat_name['category_name'] =htmlspecialchars($_POST["TC-name"],ENT_QUOTES); 
             $condition ='`category_id`='.$_POST["TC-id"];
-            $update_modal = new DynamicCrud;
-            $up_cat = $update_modal->update('categories', $cat_name, $condition);
+            $update_modal = new CategoryModel;
+            $up_cat = $update_modal->update($cat_name, $condition);
             if($up_cat){
                header('Location: ?route=dash');
             }else{
@@ -56,13 +56,16 @@ class CategoryController
          }
     }
 
-    public function display()
+    public function delete($id)
     {
-        // Handle the display logic here
-    }
-
-    public function delete()
-    {
-        // Handle the delete logic here
+        $delete_modal = new CategoryModel;
+        $condition ='`category_id`='.$id;
+        $delete_cat = $delete_modal->delete($condition);
+        if($delete_cat){
+            header('Location: ?route=dash');
+         }else{
+            print_r($delete_modal->getError());
+            header('Location: ?route=dash');
+         }
     }
 }

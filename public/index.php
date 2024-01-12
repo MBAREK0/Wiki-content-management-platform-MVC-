@@ -1,4 +1,5 @@
 <?php
+use App\controllers\Author\WikiController;
 require_once __DIR__ . '/../vendor/autoload.php';
 session_start();
 use App\controllers\Login;
@@ -48,5 +49,13 @@ switch($route){
                                     $cons= new TagController;
                                     $con =$cons->index();
                                     break;
+                                    case 'author': 
+                                        $cons= new WikiController;
+                                        $con =$cons->getpage();
+                                        break;
+                                        case 'wiki': 
+                                            $cons= new WikiController;
+                                            $con =$cons->index();
+                                            break;
     
 }

@@ -9,7 +9,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const nameInput = document.getElementById('reg-username');
 
         const passPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,24}$/;
-        const emailPattern = /^[a-zA-Z]+@[a-zA-Z]+\.[a-zA-Z]+$/;
+        const emailPattern = /^[a-zA-Z0-9]+@[a-zA-Z]+\.[a-zA-Z]+$/;
+
 
         if (emailPattern.test(emailInput.value) && passPattern.test(passInput.value) && passInput.value === VpassInput.value && nameInput.value.length <= 50) {
           

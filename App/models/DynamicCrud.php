@@ -6,23 +6,25 @@ use PDO;
 class DynamicCrud {
     private $conn;
     private $error;
+    public $tableName;
 
-    public function __construct() {
+    public function __construct($Tname) {
         $conection = new DataBase;
         $pdo = $conection->getconn();
         $this->conn=$pdo;
+        $this -> tableName = $Tname;
     }
 
     public function getError() {
         return $this->error;
     }
 
-    public function create($tableName, $data) {
+    public function create($data) {
         try {
             $columns = implode(',', array_keys($data));
             $values = implode(',', array_fill(0, count($data), '?'));
 
-            $stmt = $this->conn->prepare("INSERT INTO $tableName ($columns) VALUES ($values)");
+            $stmt = $this->conn->prepare("INSERT INTO $this->tableName ($columns) VALUES ($values)");
 
             $stmt->execute(array_values($data));
 
@@ -33,9 +35,9 @@ class DynamicCrud {
         }
     }
 
-    public function read($id,$tableName, $condition = "") {
+    public function read($column, $condition = "") {
         try {
-            $query = "SELECT * FROM $tableName ORDER BY $id DESC";
+            $query = "SELECT * FROM $this->tableName ORDER BY $column DESC";
             
             if (!empty($condition)) {
                 $query .= " WHERE $condition";
@@ -51,10 +53,10 @@ class DynamicCrud {
         }
     }
 
-    public function update($tableName, $data, $condition) {
+    public function update( $data, $condition) {
         try {
             $setClause = implode('=?,', array_keys($data)) . '=?';
-            $stmt = $this->conn->prepare("UPDATE $tableName SET $setClause WHERE $condition");
+            $stmt = $this->conn->prepare("UPDATE $this->tableName SET $setClause WHERE $condition");
 
             $stmt->execute(array_values($data));
 
@@ -65,9 +67,9 @@ class DynamicCrud {
         }
     }
 
-    public function delete($tableName, $condition) {
+    public function delete( $condition) {
         try {
-            $stmt = $this->conn->prepare("DELETE FROM $tableName WHERE $condition");
+            $stmt = $this->conn->prepare("DELETE FROM $this->tableName WHERE $condition");
             $stmt->execute();
 
             return true;

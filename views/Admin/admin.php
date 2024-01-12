@@ -90,7 +90,7 @@
                                   </a>
                               </td>
                               <td class="text-center">
-                                  <a href="#">
+                                  <a href="?route=category&catid=<?php echo $category['category_id']; ?>">
                                       <i class='fa fa-remove' style='color:#394e64'></i>
                                   </a>
                               </td>
@@ -158,7 +158,7 @@
                           </a>
                         </td>
                         <td class="text-center">
-                          <a href="#">
+                          <a href="?route=tag&tagid=<?php echo $tag['tag_id']; ?>">
                             <i class='fa fa-remove' style='color:#394e64'></i>
                           </a>
                         </td>
