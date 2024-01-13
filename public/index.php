@@ -61,5 +61,9 @@ switch($route){
                                                 $cons= new WikiController;
                                                 $con =$cons->profile();
                                                 break;
+                                                case 'search': 
+                                                    $cons= new HomeController;
+                                                    $con =$cons->search();
+                                                    break;
     
 }

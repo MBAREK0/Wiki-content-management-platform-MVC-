@@ -14,7 +14,7 @@ class WikiModel extends DynamicCrud
         $this->conn=$pdo;
         parent::__construct('wikis');
     }
-    public function wikis($condition ="",$keyWord = "") {
+    public function wikis($condition ="",$type="",$keyWord = "") {
         try {
             $query = "SELECT W.*, U.user_name AS author_name,U.email AS author_email, C.category_name AS category_name 
                       FROM wikis W 
@@ -22,7 +22,15 @@ class WikiModel extends DynamicCrud
                       INNER JOIN users U ON W.author_id = U.user_id ";
             
             if (!empty($keyWord)) {
-                $query .= " $keyWord";
+                if($type === 'T.tag_name'){
+                    $query = "SELECT W.* , T.tag_name 
+                    FROM wikis W 
+                    INNER JOIN wikitags WT ON W.wiki_id = WT.wiki_id
+                    INNER JOIN tags T ON T.tag_id = WT.tag_id  WHERE $type LIKE '%$keyWord%'";
+                }else{
+                    $query .= " WHERE $type LIKE '%$keyWord%'";
+                }
+                
             }
             if (!empty($condition)) {
                 $query .= " WHERE   $condition";

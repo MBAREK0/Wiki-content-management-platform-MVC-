@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,13 +11,8 @@
     <!-- https://fonts.google.com/ -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/templatemo-video-catalog.css">
-<!--
-
-TemplateMo 552 Video Catalog
-
-https://templatemo.com/tm-552-video-catalog
-
--->
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
+    <link href="assets/css/main.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -46,6 +42,7 @@ https://templatemo.com/tm-552-video-catalog
                                             </li>
                                         </ul>
                                     </div>
+                                    
                                 </nav>
                             </div>
                         </div>
@@ -62,7 +59,7 @@ https://templatemo.com/tm-552-video-catalog
 
             <div id="tm-video-container">
                 <video autoplay muted loop id="tm-video">
-                    <source src="video/sunset-timelapse-video.mp4" type="video/mp4">
+                    
                         <source src="assets/video/wheat-field.mp4" type="video/mp4">
                 </video>    
             </div>
@@ -75,9 +72,39 @@ https://templatemo.com/tm-552-video-catalog
                 <main>
                     <div class="row">
                         <div class="col-12">
-                            <h2 class="tm-page-title mb-4">Our Video Catalog</h2>
+                            <div id="header-search">
+                            
+                            <h3 class="tm-text-primary tm-categories-text" style="color:#435c70;font-size: 4rem;">Wiki<sup>TM</sup></h3>
+                            <div class="s003">
+                                <form>
+                                    <div class="inner-form">
+                                    <div class="input-field first-wrap">
+                                        <div class="input-select">
+                                        <select data-trigger="" name="choices-single-defaul" id="search-type">
+                                            <option placeholder="">Category</option>
+                                            <option>Title</option>
+                                            <option>Tag</option>
+                                           
+                                        </select>
+                                        </div>
+                                    </div>
+                                    <div class="input-field second-wrap">
+                                        <input id="search" type="text" placeholder="Enter Keywords?" />
+                                    </div>
+                                    <div class="input-field third-wrap">
+                                        <button class="btn-search" onclick="getdata()" id="search-btn" type="button">
+                                        <svg class="svg-inline--fa fa-search fa-w-16" aria-hidden="true" data-prefix="fas" data-icon="search" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                            <path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"></path>
+                                        </svg>
+                                        </button>
+                                    </div>
+                                    </div>
+                                </form>
+                            </div>
+                            </div>
+                            
                             <div class="tm-categories-container mb-5">
-                                <h3 class="tm-text-primary tm-categories-text">Wiki<sup>TM</sup></h3>
+                                
                                 <ul class="nav tm-category-list">
                                     <li class="nav-item tm-category-item"><a href="?route=home" class="nav-link tm-category-link active">home</a></li>
                                     <li class="nav-item tm-category-item"><a href="?route=about" class="nav-link tm-category-link">About</a></li>
@@ -88,19 +115,13 @@ https://templatemo.com/tm-552-video-catalog
                             </div>        
                         </div>
                     </div>
+
+
+               
                     
-                    <div class="row tm-catalog-item-list">
-                    <?php foreach($wikis as $wiki) : ?>
-                        <div class="col-lg-4 col-md-6 col-sm-12 tm-catalog-item">
-                            <div class="position-relative tm-thumbnail-container">
-                                <img src="assets/img/tn-03.jpg" alt="Image" class="img-fluid tm-catalog-item-img">    
-                            </div>                            
-                            <div class="p-4 tm-bg-gray tm-catalog-item-description">
-                                <h3 class="tm-text-primary mb-3 tm-catalog-item-title"><?php echo $wiki['title'] ; ?></h3>
-                                <p class="tm-catalog-item-text"><?php  $wiki['content'] ?></p>
-                            </div>
-                        </div>
-                        <?php endforeach ; ?>
+                    <div class="row tm-catalog-item-list" id="wikis">
+                        
+
                      
                     </div>
                     
@@ -179,7 +200,39 @@ https://templatemo.com/tm-552-video-catalog
     
     <script src="assets/js/jquery-3.4.1.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/extention/choices.js"></script>
+
     <script>
+        function getdata(){
+        var keyword= document.getElementById('search');
+        var btn   =document.getElementById('search-btn');
+        var type   =document.getElementById('search-type');
+        console.log(keyword);
+        const data = {
+                    keyword: keyword.value,
+                    type: type.value
+                };
+
+        const data_json =JSON.stringify(data);
+
+        xhr = new XMLHttpRequest();
+        xhr.open("POST","?route=search",true);
+
+        xhr.setRequestHeader('Content-Type','Application/json');
+
+        xhr.onreadystatechange = function(){
+            if(this.readyState == 4 && this.status == 200){
+                document.getElementById("wikis").innerHTML = this.responseText;
+               
+
+            }
+        }
+        xhr.send(data_json);
+
+    }
+    getdata();
+    
+
         function setVideoSize() {
             const vidWidth = 1920;
             const vidHeight = 1080;
@@ -238,6 +291,13 @@ https://templatemo.com/tm-552-video-catalog
                 }
             });
         })
+        const choices = new Choices('[data-trigger]',
+      {
+        searchEnabled: false,
+        itemSelectText: '',
+      });
+
+    
     </script>
 </body>
 

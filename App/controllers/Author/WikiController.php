@@ -85,8 +85,6 @@ class WikiController
      
              }
 
-
-
             $display_modale_cat = new CategoryModel;
             $display_modale_tag = new TagModel;
             $tags = $display_modale_tag->read('tag_id');
@@ -116,10 +114,10 @@ class WikiController
             header('Location: ?route=profile');
          }
     }
-    public function display ()
+    public function display ($type,$keyword)
     {
         $wiki_modal = new WikiModel;
-        $wikis = $wiki_modal->wikis();
+        $wikis = $wiki_modal->wikis('',$type,$keyword);
         return $wikis;
         
 
