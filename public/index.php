@@ -57,5 +57,9 @@ switch($route){
                                             $cons= new WikiController;
                                             $con =$cons->index();
                                             break;
+                                            case 'profile': 
+                                                $cons= new WikiController;
+                                                $con =$cons->profile();
+                                                break;
     
 }

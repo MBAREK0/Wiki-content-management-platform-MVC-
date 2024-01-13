@@ -12,17 +12,20 @@ class WikiModel extends DynamicCrud
         $conection = new DataBase;
         $pdo = $conection->getconn();
         $this->conn=$pdo;
-        parent::__construct('categories');
+        parent::__construct('wikis');
     }
-    public function read($column = "",$keyWord = "") {
+    public function wikis($condition ="",$keyWord = "") {
         try {
-            $query = "SELECT W.*, U.user_name AS author_name, C.category_name AS category_name 
+            $query = "SELECT W.*, U.user_name AS author_name,U.email AS author_email, C.category_name AS category_name 
                       FROM wikis W 
                       INNER JOIN categories C ON W.category_id = C.category_id 
-                      INNER JOIN users U ON W.author_id = U.user_id;";
+                      INNER JOIN users U ON W.author_id = U.user_id ";
             
+            if (!empty($keyWord)) {
+                $query .= " $keyWord";
+            }
             if (!empty($condition)) {
-                $query .= "$keyWord";
+                $query .= " WHERE   $condition";
             }
 
             $stmt = $this->conn->prepare($query);
@@ -69,5 +72,40 @@ class WikiModel extends DynamicCrud
             return false;
         }
     }
+
+    public function updateWiki($wiki, $tags, $wikiId) {
+        try {
+            // Update Wiki
+            $updateColumns = '';
+            foreach ($wiki as $key => $value) {
+                $updateColumns .= "$key = ?, ";
+            }
+            $updateColumns = rtrim($updateColumns, ', ');  // Remove the trailing comma
+    
+            $query = "UPDATE Wikis SET $updateColumns WHERE wiki_id = ?";
+            $stmt = $this->conn->prepare($query);
+            $stmt->execute(array_merge(array_values($wiki), [$wikiId]));
+    
+            // Delete existing WikiTags for the given wiki_id
+            $deleteTagsQuery = "DELETE FROM WikiTags WHERE wiki_id = ?";
+            $stmt = $this->conn->prepare($deleteTagsQuery);
+            $stmt->execute([$wikiId]);
+    
+            // Insert new WikiTags
+            $addTagsQuery = "INSERT INTO WikiTags (wiki_id, tag_id) VALUES (?, ?)";
+            $stmt = $this->conn->prepare($addTagsQuery);
+            
+            foreach ($tags as $tag):
+                $result = $stmt->execute([$wikiId, $tag]);
+            endforeach;
+    
+            return $result;
+        } catch (PDOException $e) {
+            echo "Error: " . $e->getMessage(); 
+            return false;
+        }
+    }
+    
+
     
 }

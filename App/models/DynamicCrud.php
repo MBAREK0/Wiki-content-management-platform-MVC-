@@ -35,12 +35,16 @@ class DynamicCrud {
         }
     }
 
-    public function read($column, $condition = "") {
+    public function read($column ="", $condition = "") {
         try {
-            $query = "SELECT * FROM $this->tableName ORDER BY $column DESC";
+            $query = "SELECT * FROM $this->tableName ";
             
+            if (!empty($column)) {
+                $query .= " ORDER BY $column DESC";
+            }
+
             if (!empty($condition)) {
-                $query .= " WHERE $condition";
+                $query .= " WHERE  $condition";
             }
 
             $stmt = $this->conn->prepare($query);
