@@ -55,7 +55,7 @@
             </div>
             <div class="row mt-2">
               <div class="col-12">
-                <form action="" method="post" id="reg-form" class="tm-login-form">
+                <form action="?route=regcheck" method="post" id="reg-form" class="tm-login-form">
                 
                   <div class="form-group">
                     <label for="username">Username</label>
@@ -125,9 +125,9 @@
                   </div>
                   <div class="d-flex " style="justify-content: space-between; align-items: center;">
                     <p style="    color: aliceblue; margin: 0 !important;">already have an acc </p>
-                  <button class="mt-5 btn btn-primary btn-block text-uppercase" style="width:40% !important;margin: 0 !important;">
+                  <a href="?route=login" class="mt-5 btn btn-primary btn-block text-uppercase" style="width:40% !important;margin: 0 !important;">
                    login
-                  </button>
+                </a>
                   </div>
                 </form>
               </div>

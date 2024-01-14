@@ -21,10 +21,18 @@ switch($route){
         $cons= new Register;
         $con =$cons->Register();
         break;
+        case 'regcheck': 
+            $cons= new Register;
+            $con =$cons->check();
+            break;
         case 'login': 
             $cons= new Login;
             $con =$cons->Login();
             break;
+            case 'logcheck': 
+                $cons= new Login;
+                $con =$cons->check();
+                break;
             case 'logout': 
                 $cons= new Login;
                 $con =$cons->logout();

@@ -14,10 +14,14 @@ class Register{
         }
     $csrf = generateCsrfToken();
 
+
+    require_once __DIR__ . '/../../views/register.php';
+}
+public function check(){
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Verify CSRF token
         
-        if (isset($_POST['csrf_token']) || $_POST['csrf_token'] === $_SESSION['csrf_token']) {
+        if (isset($_POST['csrf_token']) && $_POST['csrf_token'] === $_SESSION['csrf_token']) {
             
            $username = htmlspecialchars($_POST['username'],ENT_QUOTES);           
            $email = htmlspecialchars($_POST['email'],ENT_QUOTES);
@@ -51,6 +55,5 @@ class Register{
   
 
     }
-    require_once __DIR__ . '/../../views/register.php';
 }
 }

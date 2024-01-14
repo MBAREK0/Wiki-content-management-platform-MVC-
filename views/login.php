@@ -55,7 +55,7 @@
             </div>
             <div class="row mt-2">
               <div class="col-12">
-                <form action="" method="post" class="tm-login-form">
+                <form action="?route=logcheck" method="post" class="tm-login-form">
                   <div class="form-group">
                     <label for="email">email</label>
                     <input
