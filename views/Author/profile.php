@@ -21,10 +21,11 @@ https://templatemo.com/tm-552-video-catalog
 
 <body>
     <div class="tm-page-wrap mx-auto">
-        <div class="position-relative">
-            <div class="position-absolute tm-site-header">
-                <div class="container-fluid position-relative">
-                    <div class="row">
+    <div class="position-relative">
+			<div class="potition-absolute tm-site-header">
+				<div class="container-fluid position-relative">
+					<div class="row">						
+
                         <div class="col-5 col-md-8 ml-auto mr-0">
                             <div class="tm-site-nav">
                                 <nav class="navbar navbar-expand-lg mr-0 ml-auto" id="tm-main-nav">
@@ -39,66 +40,60 @@ https://templatemo.com/tm-552-video-catalog
                                     <div class="collapse navbar-collapse tm-nav" id="navbar-nav">
                                         <ul class="navbar-nav text-uppercase">
                                             <li class="nav-item">
-                                                <a class="nav-link tm-nav-link" href="about.html">Login</a>
+                                                <a class="nav-link tm-nav-link" href="index.html">Videos</a>
+                                            </li>
+                                            <li class="nav-item active">
+                                                <a class="nav-link tm-nav-link" href="about.html">About <span class="sr-only">(current)</span></a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link tm-nav-link" href="contact.html">SignUp</a>
+                                                <a class="nav-link tm-nav-link" href="contact.html">Contact</a>
                                             </li>
                                         </ul>
                                     </div>
                                 </nav>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="tm-welcome-container text-center text-white">
-                <div class="tm-welcome-container-inner">
-                    <a href="#content" class="btn tm-btn-animate tm-btn-cta tm-icon-down">
-                        <span>Discover</span>
-                    </a>
-                </div>
+					</div>
+				</div>
+			</div>
+			<div class="tm-welcome-container tm-fixed-header tm-fixed-header-2">
+				<div class="aliceblue">
+					<p style="margin: 100px;font-size: 33px;">Hello <?php  echo $_SESSION['username']; ?> ,<br>Whate do you think today ! </p>                	
+				</div>                
             </div>
 
-            <div id="tm-video-container">
-                <video autoplay muted loop id="tm-video">
-                    <source src="video/sunset-timelapse-video.mp4" type="video/mp4">
-                        <source src="assets/video/wheat-field.mp4" type="video/mp4">
-                </video>    
-            </div>
-            
-            <i id="tm-video-control-button" class="fas fa-pause"></i>
-        </div>
+            <div id="tm-fixed-header-bg"></div> <!-- Header image -->
+		</div>
+    </div>
 
         <div class="container-fluid">
             <div id="content" class="mx-auto tm-content-container">
                 <main>
                     <div class="row">
                         <div class="col-12">
-                        <div class="mt-5 p-5" style="background:#435c70;padding-bottom: 10px !important;">
-                           <div class="d-flex  align-items-center " style= "gap:15px; color:aliceblue; justify-content:space-between;">
-                           <h3>Profile </h3> <div><h4><span>Hello </span><?php  echo $_SESSION['username']; ?></h4></div>
-                           </div>
+
                         </div>
                             <div class="tm-categories-container mb-5">
-                                <h3 class="tm-text-primary tm-categories-text">Wiki<sup>TM</sup></h3>
+                                <a href="?route=home"><h3 class="tm-text-primary tm-categories-text">Wiki<sup>TM</sup></h3></a>
                                 <ul class="nav tm-category-list">
-                                    <li class="nav-item tm-category-item"><a href="?route=home" class="nav-link tm-category-link active">home</a></li>
+                                    <li class="nav-item tm-category-item"><a href="?route=home" class="nav-link tm-category-link ">home</a></li>
                                     <li class="nav-item tm-category-item"><a href="?route=about" class="nav-link tm-category-link">About</a></li>
                                     <li class="nav-item tm-category-item"><a href="?route=contact" class="nav-link tm-category-link">Contact</a></li>
                                     <li class="nav-item tm-category-item"><a href="?route=author" class="nav-link tm-category-link">Create wiki</a></li>
+                                    <li class="nav-item tm-category-item"><a href="?route=profile" class="nav-link tm-category-link active">Profile</a></li>
                                     
                                 </ul>
                             </div>        
                         </div>
+                        
                     </div>
                     
-                    <div class="row tm-catalog-item-list">
+                    <div class="row tm-catalog-item-list" style="justify-content:center;">
                         <?php if(!empty($wikis)){ ?>
                     <?php foreach($wikis as $wiki) : ?>
                         <div class="col-lg-4 col-md-6 col-sm-12 tm-catalog-item">
                             <div class="position-relative tm-thumbnail-container">
-                                <img src="assets/img/tn-03.jpg" alt="Image" class="img-fluid tm-catalog-item-img">    
+                                <img src="assets/img/wikimg.jpg" alt="Image" class="img-fluid tm-catalog-item-img">    
                             </div>                            
                             <div class="p-4 tm-bg-gray tm-catalog-item-description">
                                 <h3 class="tm-text-primary mb-3 tm-catalog-item-title"><?php echo $wiki['title'] ; ?></h3>

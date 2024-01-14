@@ -23,12 +23,7 @@ https://templatemo.com/tm-552-video-catalog
 			<div class="potition-absolute tm-site-header">
 				<div class="container-fluid position-relative">
 					<div class="row">						
-                        <div class="col-7 col-md-4">
-                            <a href="index.html" class="tm-bg-black text-center tm-logo-container">
-                                <i class="fas fa-video tm-site-logo mb-3"></i>
-                                <h1 class="tm-site-name">Video Catalog</h1>
-                            </a>
-                        </div>
+
                         <div class="col-5 col-md-8 ml-auto mr-0">
                             <div class="tm-site-nav">
                                 <nav class="navbar navbar-expand-lg mr-0 ml-auto" id="tm-main-nav">
@@ -60,8 +55,8 @@ https://templatemo.com/tm-552-video-catalog
 				</div>
 			</div>
 			<div class="tm-welcome-container tm-fixed-header tm-fixed-header-3">
-				<div class="text-center">
-					<p class="pt-5 px-3 tm-welcome-text tm-welcome-text-2 mb-1 mt-lg-0 mt-5 text-white mx-auto">
+				<div class="aliceblue">
+					<p style="margin: 100px;font-size: 33px;">
                         Talk to Us<br>about any question you have
                     </p>                	
 				</div>                
@@ -69,7 +64,17 @@ https://templatemo.com/tm-552-video-catalog
 
             <div id="tm-fixed-header-bg"></div> <!-- Header image -->
 		</div>
-
+        <div class="tm-categories-container mb-5">
+        <a href="?route=home"><h3 class="tm-text-primary tm-categories-text">Wiki<sup>TM</sup></h3></a>
+            <ul class="nav tm-category-list">
+            <li class="nav-item tm-category-item"><a href="?route=home" class="nav-link tm-category-link ">home</a></li>
+            <li class="nav-item tm-category-item"><a href="?route=about" class="nav-link tm-category-link">About</a></li>
+            <li class="nav-item tm-category-item"><a href="?route=contact" class="nav-link tm-category-link active">Contact</a></li>
+            <li class="nav-item tm-category-item"><a href="?route=author" class="nav-link tm-category-link">Create wiki</a></li>
+            <li class="nav-item tm-category-item"><a href="?route=profile" class="nav-link tm-category-link">Profile</a></li>
+                
+            </ul>
+        </div>    
 		<!-- Page content -->
 		<main>
 			<div class="container-fluid px-0">
@@ -78,10 +83,10 @@ https://templatemo.com/tm-552-video-catalog
 						<div class="col-12">
 							<div class="mx-auto tm-about-text-container px-3">
 								<h2 class="tm-page-title mb-4 tm-text-primary">Contact our team</h2>
-                                <p class="mb-4">
+                                <p class="mb-4" style ="color:black;">
                                     Integer sit amet odio id libero tincidunt dignissim in eget arcu. Aliquam tristique ut magna sit amet tincidunt. Sed tempor tellus nulla, molestie luctus lectus tincidunt id. You are <u>not allowed</u> to re-distribute the template ZIP file on any template collection website.
                                 </p>
-                                <p class="mb-4">Video Catalog is a free website template for your business. This is 100% free Bootstrap v4.4.1 layout. You can modify and adapt this template for your CMS websites. You can use it for commercial or non-commercial work. If you wish to suport <a rel="nofollow" target="_parent" href="https://templatemo.com" class="tm-text-primary">TemplateMo</a>, please contact us.</p>
+                                <p class="mb-4" style ="color:black;">Video Catalog is a free website template for your business. This is 100% free Bootstrap v4.4.1 layout. You can modify and adapt this template for your CMS websites. You can use it for commercial or non-commercial work. If you wish to suport <a rel="nofollow" target="_parent" href="https://templatemo.com" class="tm-text-primary">TemplateMo</a>, please contact us.</p>
 							</div>							
 						</div>						
 					</div>
@@ -128,47 +133,6 @@ https://templatemo.com/tm-552-video-catalog
 
 				<div class="parallax-window parallax-window-2" data-parallax="scroll" data-image-src="img/contact-2.jpg"></div>
 
-				<div class="mx-auto tm-content-container mt-4 px-3 mb-3">
-                    <div class="row">
-                        <div class="col-12">
-                            <h2 class="tm-page-title mb-5 tm-text-primary">Testimonials</h2>    
-                        </div>                        
-                    </div>
-					<div class="row">
-		                <div class="col-lg-6 mb-5 pt-3">
-		                    <div class="media tm-testimonial">
-                                <img class="mr-4 rounded-circle img-fluid" src="img/testimonial-1.jpg" alt="Generic placeholder image">
-                                <p class="media-body pt-3 tm-testimonial-text">
-                                    Vestibulum non lectus id lacus aliquet porttitor in non nulla. Aenean urna diam, finibys id lorem nec, feugiat convallis dolor. Integer aliquam, eros eget rutrum iaculis.    
-                                </p>                              
-                            </div>              
-		                </div>
-		                <div class="col-lg-6 mb-5 pt-3">
-                              <div class="media tm-testimonial">
-                              <img class="mr-4 rounded-circle img-fluid" src="img/testimonial-2.jpg" alt="Generic placeholder image">
-                              <p class="media-body pt-3 tm-testimonial-text">
-                                Maecenas et libero in eros laoreet finibus sed vitae diam. Etiam consetetur, nunc sed pretium elementum, diam erat fringilla tortor, placerat condimentum.
-                              </p>
-                            </div>                                    
-                        </div>
-                        <div class="col-lg-6 mb-5 pt-3">
-                            <div class="media tm-testimonial">
-                              <img class="mr-4 rounded-circle img-fluid" src="img/testimonial-3.png" alt="Generic placeholder image">
-                              <p class="media-body pt-3 tm-testimonial-text">
-                                Aliquam tristique ut magna sit amet tincidunt. Sed tempor tellus nulla, molestie luctus lectus tincidunt id. Cras duismod leo a urna placerat, vel blandit turpis fermentum.
-                              </p>
-                            </div>                  
-                        </div>
-                        <div class="col-lg-6 mb-5 pt-3">
-                            <div class="media tm-testimonial">
-                              <img class="mr-4 rounded-circle img-fluid" src="img/testimonial-4.png" alt="Generic placeholder image">
-                              <p class="media-body pt-3 tm-testimonial-text">
-                                Nulla suscipit posuere lectus ut venenatis. Proin sed orci eget tellus euismod vulputate eu eu arcu. Etiam a bibendum lorem. Cura
-                              </p>
-                            </div>                  
-                        </div>
-		            </div>
-				</div>
 			</div>
 		</main>
 
@@ -178,7 +142,7 @@ https://templatemo.com/tm-552-video-catalog
                 <div class="col-xl-6 col-lg-12 mb-4">
                     <div class="tm-bg-gray p-5 h-100">
                         <h3 class="tm-text-primary mb-3">Do you want to get our latest updates?</h3>
-                        <p class="mb-5">Please subscribe our newsletter for upcoming new videos and latest information about our
+                        <p class="mb-5 aliceblue">Please subscribe our newsletter for upcoming new videos and latest information about our
                             work. Thank you.</p>
                         <form action="" method="GET" class="tm-subscribe-form">
                             <input type="text" name="email" placeholder="Your Email..." required>

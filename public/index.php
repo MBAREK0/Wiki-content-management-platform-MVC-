@@ -65,5 +65,9 @@ switch($route){
                                                     $cons= new HomeController;
                                                     $con =$cons->search();
                                                     break;
+                                                    case 'content': 
+                                                        $cons= new HomeController;
+                                                        $con =$cons->contentpage();
+                                                        break;
     
 }

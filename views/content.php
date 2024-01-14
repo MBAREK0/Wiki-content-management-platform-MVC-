@@ -56,40 +56,48 @@ https://templatemo.com/tm-552-video-catalog
 			</div>
 			<div class="tm-welcome-container tm-fixed-header tm-fixed-header-2">
 				<div class="aliceblue">
-					<p style="margin: 100px;font-size: 33px;"> About the Wiki<sup>TM</sup><br>read the text under <br>for more information</p>                	
+					<p style="margin: 100px;font-size: 33px;">SignUp For Create your Wiki and share it<br> with peapels </p>                	
 				</div>                
             </div>
 
             <div id="tm-fixed-header-bg"></div> <!-- Header image -->
 		</div>
+
         <div class="tm-categories-container mb-5">
         <a href="?route=home"><h3 class="tm-text-primary tm-categories-text">Wiki<sup>TM</sup></h3></a>
             <ul class="nav tm-category-list">
             <li class="nav-item tm-category-item"><a href="?route=home" class="nav-link tm-category-link ">home</a></li>
-            <li class="nav-item tm-category-item"><a href="?route=about" class="nav-link tm-category-link active">About</a></li>
-            <li class="nav-item tm-category-item"><a href="?route=contact" class="nav-link tm-category-link">Contact</a></li>
+            <li class="nav-item tm-category-item"><a href="?route=about" class="nav-link tm-category-link">About</a></li>
+            <li class="nav-item tm-category-item"><a href="?route=contact" class="nav-link tm-category-link active">Contact</a></li>
             <li class="nav-item tm-category-item"><a href="?route=author" class="nav-link tm-category-link">Create wiki</a></li>
             <li class="nav-item tm-category-item"><a href="?route=profile" class="nav-link tm-category-link">Profile</a></li>
                 
             </ul>
-        </div> 
+        </div>    
 		<!-- Page content -->
 		<main>
 			<div class="container-fluid px-0">
 				<div class="mx-auto tm-content-container">					
 					<div class="row mt-3 mb-5 pb-3">
 						<div class="col-12">
-							<div class="mx-auto tm-about-text-container px-3">
-								<h2 class="tm-page-title mb-4  tm-text-primary"><h3 class="tm-text-primary tm-categories-text" style="color:#435c70;font-size: 4rem;"> About the Wiki<sup>TM</sup></h3> </h2>
-								<p class="mb-4 t" style = "color:black;">Video Catalog is free HTML CSS template for your website. This Bootstrap v4.4.1 website template is 100% free download for everyone. You can modify and expand this template for your CMS websites. You can use it for commercial or non-commercial work. If you wish to support <a href="https://templatemo.com" class="tm-text-primary">TemplateMo</a>, please contact us.</p>
-								<p class="mb-4" style = "color:black;">You are <u>not allowed</u> to re-distribute the template ZIP file on any template collection website.</p>
-								<p class="mb-4" style = "color:black;">Vivamus sit amet justo sed erat iaculis consequat. Nulla suscipit posuere lectus ut venenatis. Proin sed orci eget tellus euismod vulputate eu eu arcu. Etiam a bibendum lorem. Curabitur ac bibendum odio. Vivamus euismod dui mauris, ut tincidunt mi congue quis.</p>
-								<p class="mb-0" style = "color:black;">Phasellus luctus orci dolor, a luctus massa tincidunt vitae. Integer sit amet odio id libero tincidunt dignissim in eget arcu. Aliquam tristique ut magna sit amet tincidunt. Sed tempor tellus nulla, molestie luctus lectus tincidunt id. Cras duismod leo a urna placerat, vel blandit turpis fermentum.</p>	
-							</div>							
+                        <div class="mx-auto tm-about-text-container px-3" style="border:1px solid black;">
+                        <h5>  <?php echo $wiki[0]['category_name'] ?></h5>
+                        </div>
+							<div class="mx-auto tm-about-text-container px-3" style="border:1px solid black;">
+								<h2 class="tm-page-title mb-4 tm-text-primary"><?php echo $wiki[0]['title'] ?></h2>
+                                <div><?php echo $wiki[0]['content'] ?></div>
+                                <p style="color:black;text-align: end;">created by <strong><?php echo $wiki[0]['author_name'] ?></strong> </p>
+							</div>	
+                            <div class="mx-auto tm-about-text-container px-3" style="border:1px solid black;">
+                            <span>Tags : </span>
+                            <?php foreach($tags as $tag): ?>
+                            <span> #<?php echo $tag['tag_name'] ?></span>
+                            <?php endforeach ?>
+                            </div>
+                         
 						</div>						
 					</div>					
 				</div>
-
 
 			</div>
 		</main>
@@ -100,7 +108,7 @@ https://templatemo.com/tm-552-video-catalog
                 <div class="col-xl-6 col-lg-12 mb-4">
                     <div class="tm-bg-gray p-5 h-100">
                         <h3 class="tm-text-primary mb-3">Do you want to get our latest updates?</h3>
-                        <p class="mb-5 aliceblue" >Please subscribe our newsletter for upcoming new videos and latest information about our
+                        <p class="mb-5">Please subscribe our newsletter for upcoming new videos and latest information about our
                             work. Thank you.</p>
                         <form action="" method="GET" class="tm-subscribe-form">
                             <input type="text" name="email" placeholder="Your Email..." required>

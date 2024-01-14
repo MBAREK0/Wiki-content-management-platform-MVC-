@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <!-- https://getbootstrap.com/ -->
     <link rel="stylesheet" href="assets/css/templatemo-style.css">
+    <link rel="stylesheet" href="assets/css/templatemo-video-catalog.css">
+
 
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
@@ -20,32 +22,21 @@
 
 <body id="reportsPage">
     <div class="" id="home" style="background: aliceblue;">
-        <nav class="navbar navbar-expand-xl">
+    <nav class="navbar navbar-expand-xl">
             <div class="container h-100">
-                <a class="navbar-brand" href="index.html">
-                    <h1 class="tm-site-title mb-0">Wiki<sup>TM</sup></h1>
-                </a>
-                <button class="navbar-toggler ml-auto mr-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                  
-                </button>
+       
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link d-block" href="login.html">Admin</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link d-block" href="login.html">Admin</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link d-block" href="login.html">Admin</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link d-block" href="login.html">Admin, <b>Logout</b></a>
-                        </li>
+                <div class="tm-categories-container mt-">
+                        <a href="?route=home"><h3 class="text-white tm-categories-text">Wiki<sup>TM</sup></h3></a>
+                    <ul class="nav tm-category-list">
+                    <li class="nav-item tm-category-item"><a href="?route=home" class="nav-link tm-categories-link ">home</a></li>
+                    <li class="nav-item tm-category-item"><a href="?route=about" class="nav-link tm-categories-link">About</a></li>
+                    <li class="nav-item tm-category-item"><a href="?route=contact" class="nav-link tm-categories-link ">Contact</a></li>
+                    <li class="nav-item tm-category-item"><a href="?route=author" class="nav-link tm-category-link active">Create wiki</a></li>
+                    <li class="nav-item tm-category-item"><a href="?route=profile" class="nav-link tm-categories-link">Profile</a></li>
+                        
                     </ul>
-                </div>
+                </div> 
             </div>
         </nav>
         <div class="container">

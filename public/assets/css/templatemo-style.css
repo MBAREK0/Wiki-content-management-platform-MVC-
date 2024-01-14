@@ -32,6 +32,7 @@ button:focus {
 .tm-site-icon {
   color: #656565;
 }
+
 .tm-site-title {
   display: inline-block;
   text-transform: uppercase;
@@ -95,7 +96,7 @@ button:focus {
   color: #fff;
   margin-bottom: 30px;
 }
-.nav-link {
+.lien-active {
   color: #fff;
   height: 100%;
   display: flex;
@@ -104,13 +105,13 @@ button:focus {
   flex-direction: column;
   font-size: 90%;
 }
-.nav-link > i {
+.xxx > i {
   margin-bottom: 10px;
   margin-right: 0;
   font-size: 1.5rem;
 }
 .dropdown-item,
-.nav-link {
+.xxx {
   padding: 15px 20px;
 }
 .dropdown-menu {
@@ -126,27 +127,16 @@ button:focus {
   color: #fff;
   padding: 15px 30px;
 }
-.navbar-nav .active > .nav-link,
-.navbar-nav .nav-link.active {
-  background-color: #f5a623;
-  color: #fff;
-}
-.navbar-nav .nav-link.active i {
-  color: #fff;
-}
+
 .dropdown-item:focus,
 .dropdown-item:hover {
   background-color: #567086;
 }
-.navbar-nav a:hover,
-.navbar-nav a:hover i {
-  color: #f5a623;
-}
 
-.nav-item {
+.xxx {
   text-align: center;
 }
-.nav-item:last-child {
+.xxx:last-child {
   margin-right: 0;
 }
 .dropdown-toggle::after {
@@ -439,9 +429,7 @@ input[type="checkbox"]:focus {
 .tm-block-product-categories {
   min-height: 650px;
 }
-.nav-link{
-  color: aliceblue !important;
-}
+
 .tm-product-table-container {
       max-height: 526px;
   margin-bottom: 15px;
@@ -556,7 +544,7 @@ input[type="checkbox"]:focus {
 .tm-nav-icon {
   color: #fff;
 }
-.nav-link a:hover{
+.xxx a:hover{
   color: #f5a623;
 
 }
@@ -587,7 +575,7 @@ input[type="checkbox"]:focus {
 }
 
 @media (min-width: 1200px) {
-  .navbar-expand-xl .navbar-nav .nav-link {
+  .navbar-expand-xl .navbar-nav .xxx {
     padding-left: 28px;
     padding-right: 28px;
   }
@@ -596,17 +584,17 @@ input[type="checkbox"]:focus {
   }
 }
 @media (min-width: 992px) {
-  .navbar-expand-lg .navbar-nav .nav-link {
+  .navbar-expand-lg .navbar-nav .xxx {
     padding: 15px 20px;
   }
 }
 @media (max-width: 1275px) and (min-width: 1200px) {
-  .nav-item {
+  .xxx {
     margin-right: 15px;
   }
 }
 @media (max-width: 1350px) {
-  .nav-item {
+  .xxx {
     margin-right: 1px;
   }
 }
@@ -627,18 +615,18 @@ input[type="checkbox"]:focus {
   .dropdown-menu {
     text-align: center;
   }
-  .nav-link {
+  .xxx {
     color: #fff;
     background-color: #567086;
     padding: 15px;
     flex-direction: row;
   }
-  .nav-link > i {
+  .xxx > i {
     font-size: 1rem;
     margin-right: 10px;
     margin-bottom: 0;
   }
-  .nav-item {
+  .xxx {
     margin-right: 0;
   }
   .tm-block-taller {
@@ -717,4 +705,10 @@ input[type="checkbox"]:focus {
   #lineChart {
     max-height: 350px;
   }
+}
+.lien-active:hover{
+  color: #f5a623 !important;
+}
+.lien-active{
+  color: #29cdd8 !important;
 }

@@ -44,7 +44,9 @@ class DynamicCrud {
             }
 
             if (!empty($condition)) {
-                $query .= " WHERE  $condition";
+                $query = " SELECT  T.tag_name FROM tags T 
+                           INNER JOIN wikitags WT ON T.tag_id = WT.tag_id
+                            WHERE WT.wiki_id = $condition";
             }
 
             $stmt = $this->conn->prepare($query);
@@ -71,7 +73,7 @@ class DynamicCrud {
         }
     }
 
-    public function delete( $condition) {
+    public function delete($condition) {
         try {
             $stmt = $this->conn->prepare("DELETE FROM $this->tableName WHERE $condition");
             $stmt->execute();

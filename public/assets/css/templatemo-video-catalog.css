@@ -46,7 +46,7 @@ a:hover {
     text-decoration: none;
 }
 
-h2, p { color:aliceblue; }
+.aliceblue { color:aliceblue; }
 
 .tm-site-header {
     position: absolute;
@@ -286,7 +286,11 @@ h2, p { color:aliceblue; }
     padding: 10px;
     border-bottom: 3px solid transparent;
 }
-
+.tm-categories-link{
+    color:aliceblue;
+    padding: 10px;
+    border-bottom: 3px solid transparent;
+}
 .tm-category-link.active,
 .tm-category-link:hover {
     border-bottom: 3px solid #3399CC;
@@ -371,8 +375,8 @@ h2, p { color:aliceblue; }
 
 #tm-fixed-header-bg { height: 450px; }
 .tm-fixed-header-1 { background-image: url(../img/video-detail-1.jpg); }
-.tm-fixed-header-2 { background-image: url(../img/about-1.jpg); }
-.tm-fixed-header-3 { background-image: url(../img/contact-1.jpg); }
+.tm-fixed-header-2 { background-image: url(../img/R.jpeg); }
+.tm-fixed-header-3 { background-image: url(../img/R.jpeg); }
 
 video {
   width: 100%;

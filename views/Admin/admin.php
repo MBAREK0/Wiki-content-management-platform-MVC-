@@ -45,7 +45,7 @@
                             <a class="nav-link d-block" href="login.html">Admin</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link d-block" href="login.html">Admin</a>
+                            <a class="nav-link d-block" href="login.html ">Admin</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link d-block" href="login.html">Admin, <b>Logout</b></a>
