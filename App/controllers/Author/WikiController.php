@@ -10,6 +10,11 @@ class WikiController
 {
     public function getpage(){
 
+        if($_SESSION['role'] !== 'author' ?? false) {
+            header("location:index.php?route=login");
+            exit;
+            return 0;
+        }
         $display_modale_cat = new CategoryModel;
         $display_modale_tag = new TagModel;
         $tags = $display_modale_tag->read('tag_id');
@@ -18,6 +23,11 @@ class WikiController
         require_once __DIR__ ."/../../../views/Author/author.php";
     }
     public function profile(){
+        if($_SESSION['role'] !== 'author' ?? false) {
+            header("location:index.php?route=login");
+            exit;
+            return 0;
+        }
         $wiki_modal = new WikiModel;
         $user = 'W.author_id  = '.$_SESSION['user_id'];
         $wikis = $wiki_modal->wikis($user);
@@ -66,6 +76,11 @@ class WikiController
 
     public function update()
     {
+        if($_SESSION['role'] !== 'author' ?? false) {
+            header("location:index.php?route=login");
+            exit;
+            return 0;
+        }
         $update_modal = new WikiModel;
         if (isset($_GET['wikiid'])) {
             

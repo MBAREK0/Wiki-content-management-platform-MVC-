@@ -36,16 +36,19 @@ https://templatemo.com/tm-552-video-catalog
                                         </span>
                                     </button>
                                     <div class="collapse navbar-collapse tm-nav" id="navbar-nav">
-                                        <ul class="navbar-nav text-uppercase">
+                                    <ul class="navbar-nav text-uppercase">
+                                        <?php if(!isset($_SESSION['role'])) {  ?>
                                             <li class="nav-item">
-                                                <a class="nav-link tm-nav-link" href="index.html">Videos</a>
-                                            </li>
-                                            <li class="nav-item active">
-                                                <a class="nav-link tm-nav-link" href="about.html">About <span class="sr-only">(current)</span></a>
+                                                <a class="nav-link tm-nav-link" href="?route=login">Login</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link tm-nav-link" href="contact.html">Contact</a>
+                                                <a class="nav-link tm-nav-link" href="?route=register">SignUp</a>
                                             </li>
+                                            <?php } else{?>
+                                                <li class="nav-item">
+                                                <a class="nav-link tm-nav-link" href="?route=logout">logout</a>
+                                            </li>
+                                            <?php } ?>
                                         </ul>
                                     </div>
                                 </nav>
@@ -68,9 +71,14 @@ https://templatemo.com/tm-552-video-catalog
             <ul class="nav tm-category-list">
             <li class="nav-item tm-category-item"><a href="?route=home" class="nav-link tm-category-link ">home</a></li>
             <li class="nav-item tm-category-item"><a href="?route=about" class="nav-link tm-category-link">About</a></li>
-            <li class="nav-item tm-category-item"><a href="?route=contact" class="nav-link tm-category-link ">Contact</a></li>
+            <?php if(isset($_SESSION['role'])) :  ?>
+            <?php if($_SESSION['role'] === 'author' ?? false) : ?>
             <li class="nav-item tm-category-item"><a href="?route=author" class="nav-link tm-category-link">Create wiki</a></li>
-            <li class="nav-item tm-category-item"><a href="?route=profile" class="nav-link tm-category-link">Profile</a></li>
+            <?php endif; if($_SESSION['role'] === 'author' ?? false) : ?>
+            <li class="nav-item tm-category-item"><a href="?route=profile" class="nav-link tm-category-link ">Profile</a></li>
+            <?php endif; if($_SESSION['role'] === 'admin' ?? false) : ?>
+            <li class="nav-item tm-category-item"><a href="?route=dash" style="text-decoration: none;" class="nav-link tm-category-link ">Dashboard</a></li>
+            <?php endif;endif; ?>
                 
             </ul>
         </div>    

@@ -56,5 +56,8 @@ class HomeController {
 
             require_once __DIR__ ."/../../views/content.php";
     }
+    public function F403(){
+        require_once __DIR__ ."/../../views/404.php";
+    }
 
 }

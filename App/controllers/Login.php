@@ -50,4 +50,18 @@ class Login{
            
         require_once __DIR__ . '/../../views/login.php';
     }
+    public function logout(){
+       
+if(isset($_SESSION['user_id'])) {
+    
+    $_SESSION = array();
+    session_destroy();
+
+    header("Location: ?route=login");
+    exit();
+} else {
+    header("Location: ?route=login");
+    exit();
+}
+    }
 }

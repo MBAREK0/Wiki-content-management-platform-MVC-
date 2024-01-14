@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -37,10 +38,16 @@
                     <li class="nav-item tm-category-item"><a href="?route=home" class=" tm-categories-link ">home</a></li>
                     <li class="nav-item tm-category-item"><a href="?route=about" class=" tm-categories-link">About</a></li>
                     <li class="nav-item tm-category-item"><a href="?route=contact" class=" tm-categories-link ">Contact</a></li>
-                    <li class="nav-item tm-category-item"><a href="?route=author" style="text-decoration: none;" class=" tm-category-link ">Create wiki</a></li>
+                    <?php if(isset($_SESSION['role'])) :  ?>
+                    <?php if($_SESSION['role'] === 'author' ?? false) : ?>
+                    <li class="nav-item tm-category-item"><a href="?route=author" class=" tm-categories-link ">Create wiki</a></li>
+                    <?php endif; if($_SESSION['role'] === 'author' ?? false) : ?>
                     <li class="nav-item tm-category-item"><a href="?route=profile" class=" tm-categories-link">Profile</a></li>
+                    <?php endif; if($_SESSION['role'] === 'admin' ?? false) : ?>
                     <li class="nav-item tm-category-item"><a href="?route=dash" style="text-decoration: none;" class=" tm-category-link active">Dashboard</a></li>
-                        
+                    <?php endif; ?>
+                    <li class="nav-item tm-category-item"><a href="?route=logout" style="text-decoration: none;" class="nav-link tm-category-link ">logout</a></li>
+                    <?php endif; ?>
                     </ul>
                 </div> 
             </div>

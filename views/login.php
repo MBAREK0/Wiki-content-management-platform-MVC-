@@ -25,7 +25,7 @@
     <div>
       <nav class="navbar navbar-expand-xl">
         <div class="container h-100">
-          <a class="navbar-brand" href="index.html">
+          <a class="navbar-brand" href="?route=home">
             <h1 class="tm-site-title mb-0">Wiki<sup>TM</sup></h1>
           </a>
           <button

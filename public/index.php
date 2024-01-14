@@ -25,6 +25,10 @@ switch($route){
             $cons= new Login;
             $con =$cons->Login();
             break;
+            case 'logout': 
+                $cons= new Login;
+                $con =$cons->logout();
+                break;
             case 'home': 
                 $cons= new HomeController;
                 $con =$cons->index();
@@ -68,6 +72,10 @@ switch($route){
                                                     case 'content': 
                                                         $cons= new HomeController;
                                                         $con =$cons->contentpage();
+                                                        break;
+                                                        default:
+                                                        $cons= new HomeController;
+                                                        $con =$cons->F403();
                                                         break;
     
 }

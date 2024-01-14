@@ -38,16 +38,19 @@ https://templatemo.com/tm-552-video-catalog
                                         </span>
                                     </button>
                                     <div class="collapse navbar-collapse tm-nav" id="navbar-nav">
-                                        <ul class="navbar-nav text-uppercase">
+                                    <ul class="navbar-nav text-uppercase">
+                                        <?php if(!isset($_SESSION['role'])) {  ?>
                                             <li class="nav-item">
-                                                <a class="nav-link tm-nav-link" href="index.html">Videos</a>
-                                            </li>
-                                            <li class="nav-item active">
-                                                <a class="nav-link tm-nav-link" href="about.html">About <span class="sr-only">(current)</span></a>
+                                                <a class="nav-link tm-nav-link" href="?route=login">Login</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link tm-nav-link" href="contact.html">Contact</a>
+                                                <a class="nav-link tm-nav-link" href="?route=register">SignUp</a>
                                             </li>
+                                            <?php } else{?>
+                                                <li class="nav-item">
+                                                <a class="nav-link tm-nav-link" href="?route=logout">logout</a>
+                                            </li>
+                                            <?php } ?>
                                         </ul>
                                     </div>
                                 </nav>
@@ -73,19 +76,25 @@ https://templatemo.com/tm-552-video-catalog
                         <div class="col-12">
 
                         </div>
-                            <div class="tm-categories-container mb-5">
+                            <div class="tm-categories-container container-fluid mb-5">
                                 <a href="?route=home"><h3 class="tm-text-primary tm-categories-text">Wiki<sup>TM</sup></h3></a>
                                 <ul class="nav tm-category-list">
                                     <li class="nav-item tm-category-item"><a href="?route=home" class="nav-link tm-category-link ">home</a></li>
                                     <li class="nav-item tm-category-item"><a href="?route=about" class="nav-link tm-category-link">About</a></li>
                                     <li class="nav-item tm-category-item"><a href="?route=contact" class="nav-link tm-category-link">Contact</a></li>
+                                    <?php if(isset($_SESSION['role'])) :  ?>
+                                    <?php if($_SESSION['role'] === 'author' ?? false) : ?>
                                     <li class="nav-item tm-category-item"><a href="?route=author" class="nav-link tm-category-link">Create wiki</a></li>
+                                    <?php endif; if($_SESSION['role'] === 'author' ?? false) : ?>
                                     <li class="nav-item tm-category-item"><a href="?route=profile" class="nav-link tm-category-link active">Profile</a></li>
+                                    <?php endif; if($_SESSION['role'] === 'admin' ?? false) : ?>
+                                   <li class="nav-item tm-category-item"><a href="?route=dash" style="text-decoration: none;" class="nav-link tm-category-link active">Dashboard</a></li>
+                                    <?php endif;endif; ?>
                                     
                                 </ul>
                             </div>        
                         </div>
-                        
+                
                     </div>
                     
                     <div class="row tm-catalog-item-list" style="justify-content:center;">

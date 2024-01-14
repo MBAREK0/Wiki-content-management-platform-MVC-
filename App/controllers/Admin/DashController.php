@@ -6,7 +6,11 @@ use App\models\WikiModel;
 
 class DashController {
     public function index() {
-        
+        if($_SESSION['role'] !== 'admin' ?? false) {
+            header("location:index.php?route=login");
+            exit;
+            return 0;
+        }
         $display_modale_cat = new CategoryModel;
         $display_modale_tag = new TagModel;
         $display_modale_wiki = new WikiModel;
