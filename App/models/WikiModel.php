@@ -19,21 +19,21 @@ class WikiModel extends DynamicCrud
             $query = "SELECT W.*, U.user_name AS author_name,U.email AS author_email, C.category_name AS category_name 
                       FROM wikis W 
                       INNER JOIN categories C ON W.category_id = C.category_id 
-                      INNER JOIN users U ON W.author_id = U.user_id ";
+                      INNER JOIN users U ON W.author_id = U.user_id  WHERE W.archived_at IS NULL";
             
             if (!empty($keyWord)) {
                 if($type === 'T.tag_name'){
                     $query = "SELECT W.* , T.tag_name 
                     FROM wikis W 
                     INNER JOIN wikitags WT ON W.wiki_id = WT.wiki_id
-                    INNER JOIN tags T ON T.tag_id = WT.tag_id  WHERE $type LIKE '%$keyWord%'";
+                    INNER JOIN tags T ON T.tag_id = WT.tag_id  WHERE W.archived_at IS NULL AND $type LIKE '%$keyWord%'";
                 }else{
-                    $query .= " WHERE $type LIKE '%$keyWord%'";
+                    $query .= " AND $type LIKE '%$keyWord%'";
                 }
                 
             }
             if (!empty($condition)) {
-                $query .= " WHERE   $condition";
+                $query .= " AND  $condition";
             }
 
             $stmt = $this->conn->prepare($query);

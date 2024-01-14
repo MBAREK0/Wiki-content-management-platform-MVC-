@@ -63,12 +63,12 @@ https://templatemo.com/tm-552-video-catalog
             <div id="tm-fixed-header-bg"></div> <!-- Header image -->
 		</div>
 
-        <div class="tm-categories-container mb-5">
+        <div class="tm-categories-container container-fluid mb-5">
         <a href="?route=home"><h3 class="tm-text-primary tm-categories-text">Wiki<sup>TM</sup></h3></a>
             <ul class="nav tm-category-list">
             <li class="nav-item tm-category-item"><a href="?route=home" class="nav-link tm-category-link ">home</a></li>
             <li class="nav-item tm-category-item"><a href="?route=about" class="nav-link tm-category-link">About</a></li>
-            <li class="nav-item tm-category-item"><a href="?route=contact" class="nav-link tm-category-link active">Contact</a></li>
+            <li class="nav-item tm-category-item"><a href="?route=contact" class="nav-link tm-category-link ">Contact</a></li>
             <li class="nav-item tm-category-item"><a href="?route=author" class="nav-link tm-category-link">Create wiki</a></li>
             <li class="nav-item tm-category-item"><a href="?route=profile" class="nav-link tm-category-link">Profile</a></li>
                 
@@ -108,7 +108,7 @@ https://templatemo.com/tm-552-video-catalog
                 <div class="col-xl-6 col-lg-12 mb-4">
                     <div class="tm-bg-gray p-5 h-100">
                         <h3 class="tm-text-primary mb-3">Do you want to get our latest updates?</h3>
-                        <p class="mb-5">Please subscribe our newsletter for upcoming new videos and latest information about our
+                        <p class="mb-5 text-light">Please subscribe our newsletter for upcoming new videos and latest information about our
                             work. Thank you.</p>
                         <form action="" method="GET" class="tm-subscribe-form">
                             <input type="text" name="email" placeholder="Your Email..." required>

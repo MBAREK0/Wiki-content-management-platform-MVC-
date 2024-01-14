@@ -96,8 +96,8 @@ https://templatemo.com/tm-552-video-catalog
                                 <img src="assets/img/wikimg.jpg" alt="Image" class="img-fluid tm-catalog-item-img">    
                             </div>                            
                             <div class="p-4 tm-bg-gray tm-catalog-item-description">
-                                <h3 class="tm-text-primary mb-3 tm-catalog-item-title"><?php echo $wiki['title'] ; ?></h3>
-                                <p class="tm-catalog-item-text"><?php  echo $wiki['discreption'] ?></p>
+                            <a href="?route=content&contentid=<?php  echo $wiki['wiki_id'] ?>"> <h3 class="tm-text-primary mb-3"><?php echo $wiki['title'] ; ?></h3></a>
+                                <p class="tm-catalog-item-text" style="color: aliceblue;"><?php  echo $wiki['discreption'] ?></p>
                                 <a href="?route=wiki&deletewikiid=<?php  echo $wiki['wiki_id'] ?>" class="mr-3">delete </a>
                                 <a href="?route=wiki&wikiid=<?php  echo $wiki['wiki_id'] ?>">edit </a>
                             </div>

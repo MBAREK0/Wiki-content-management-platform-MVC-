@@ -33,6 +33,10 @@ class WikiController
             $this->update();
         } else if (isset($_GET["deletewikiid"])) {
             $this->delete($_GET["deletewikiid"]);
+        }else if (isset($_GET["archifierid"])) {
+            $this->archife($_GET["archifierid"]);
+        }else if (isset($_GET["diafid"])) {
+            $this->diarchife($_GET["diafid"]);
         }
     }
 
@@ -123,5 +127,33 @@ class WikiController
 
 
     }
+    public function archife($id){
+        $wiki_modal = new WikiModel;
+        $data['archived_at'] = 'CURRENT_TIMESTAMP';
+        $condition ='`wiki_id`='.$id;
+        
+        $archifier  =$wiki_modal->update( $data, $condition) ;
+        if($archifier){
+            header('Location: ?route=dash');
+         }else{
+            print_r($wiki_modal->getError());
+            header('Location: ?route=dash');
+         }
+         
+    }
+    public function diarchife($id){
+        $wiki_modal = new WikiModel;
+        $data['archived_at'] = 'NULL';
+        $condition ='`wiki_id`='.$id;
+        
+        $archifier  =$wiki_modal->update( $data, $condition) ;
+        
+        if($archifier){
+            header('Location: ?route=dash');
+         }else{
+            print_r($wiki_modal->getError());
+            // header('Location: ?route=dash');
+         }
+}
 
 }

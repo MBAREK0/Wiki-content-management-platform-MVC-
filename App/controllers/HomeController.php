@@ -1,6 +1,7 @@
 <?php
 namespace App\controllers;
 use App\controllers\Author\WikiController;
+use App\models\CategoryModel;
 use App\models\WikiModel;
 use App\models\TagModel;
 
@@ -8,7 +9,12 @@ use App\models\TagModel;
 class HomeController {
     public function index() {
 
-
+        $controller = new WikiModel;
+        $last_wikis = $controller-> read('GREATEST(created_at, updated_at)','',10);
+        $controller2 = new CategoryModel;
+        $last_cats = $controller2-> read('GREATEST(created_at, updated_at)','',10);
+        
+       
         require_once __DIR__ ."/../../views/home.php";
     }
     public function search() {

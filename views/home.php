@@ -140,24 +140,21 @@
 
 
                         </div>
+                        <?php   foreach($last_wikis as $last_wiki) :  ?> 
 						<div class="tm-bg-gray p-5 h-100 last-wiki">
-                            <h3 class="tm-text-primary mb-3">Do you want to get our latest updates?</h3>
-                            <p class="mb-5 aliceblue">Please subscribe our newsletter for upcoming new videos and latest information about our
-                                work. Thank you.</p>
+                        <a href="?route=content&contentid=<?php  echo $last_wiki['wiki_id'] ?>"> <h3 class="tm-text-primary mb-3"><?php echo $last_wiki['title'] ; ?></h3></a>
+                            <p class="mb-5 aliceblue"><?php  echo $last_wiki['discreption'] ?></p>
 
                         </div>
+                        <?php endforeach ; ?>
 
-						<div class="tm-bg-gray p-5 h-100 last-wiki">
-                            <h3 class="tm-text-primary mb-3">Do you want to get our latest updates?</h3>
-                            <p class="mb-5 aliceblue">Please subscribe our newsletter for upcoming new videos and latest information about our
-                                work. Thank you.</p>
+                   
 
-                        </div>
 						
 						
                     </div>
                     <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12 mb-4">
-                        <div class="p-5 tm-bg-gray">
+                        <div class="p-5 tm-bg-gray" style="height: 25rem;">
                             <h3 class="tm-text-primary mb-4">Quick Links</h3>
                             <ul class="list-unstyled tm-footer-links">
                                 <li><a href="#">Duis bibendum</a></li>
@@ -168,15 +165,14 @@
                             </ul>    
                         </div>                        
                     </div>
-                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12 mb-4">
-                        <div class="p-5 tm-bg-gray h-100">
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12 mb-4 ">
+                        <div class="p-5 tm-bg-gray h-100 last-wikis">
                             <h3 class="tm-text-primary mb-4">Last Categories</h3>
                             <ul class="list-unstyled tm-footer-links">
-                                <li><a href="#">Our Videos</a></li>
-                                <li><a href="#">License Terms</a></li>
-                                <li><a href="#">About Us</a></li>
-                                <li><a href="#">Contact</a></li>
-                                <li><a href="#">Privacy Policies</a></li>
+                            <?php   foreach($last_cats as $last_cat) :  ?> 
+                                <li><a href="#"><?php echo $last_cat['category_name'] ?></a></li>
+                                <?php endforeach ; ?>
+
                             </ul>
                         </div>                        
                     </div>

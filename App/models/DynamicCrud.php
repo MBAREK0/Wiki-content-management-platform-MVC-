@@ -35,12 +35,22 @@ class DynamicCrud {
         }
     }
 
-    public function read($column ="", $condition = "") {
+    public function read($column ="", $condition = "" ,$limit = "") {
         try {
             $query = "SELECT * FROM $this->tableName ";
             
             if (!empty($column)) {
-                $query .= " ORDER BY $column DESC";
+                if(!empty($limit)){
+                    
+                    if($this->tableName == 'wikis'){
+                        $query .= "WHERE archived_at IS NULL ORDER BY $column DESC LIMIT $limit";
+                    }else{
+                        $query .= " ORDER BY $column DESC LIMIT $limit";
+                    }
+                }else{
+                    $query .= " ORDER BY $column DESC";
+                }
+                
             }
 
             if (!empty($condition)) {
@@ -61,11 +71,26 @@ class DynamicCrud {
 
     public function update( $data, $condition) {
         try {
+          
+
             $setClause = implode('=?,', array_keys($data)) . '=?';
+            
             $stmt = $this->conn->prepare("UPDATE $this->tableName SET $setClause WHERE $condition");
 
-            $stmt->execute(array_values($data));
-
+            if (isset($data['archived_at']) && strtoupper($data['archived_at']) === 'NULL') {
+                $stmt = $this->conn->prepare("UPDATE $this->tableName SET archived_at = NULL WHERE $condition");
+                $stmt->execute();
+                return true;
+            } 
+ 
+            if (in_array('CURRENT_TIMESTAMP', array_values($data))) {
+                $stmt = $this->conn->prepare("UPDATE $this->tableName SET archived_at = CURRENT_TIMESTAMP WHERE $condition");
+                $stmt->execute();
+            }else{
+                $stmt->execute(array_values($data));
+            }
+            
+            
             return true;
         } catch (PDOException $e) {
             $this->error = "Update operation failed: " . $e->getMessage();
@@ -83,6 +108,13 @@ class DynamicCrud {
             $this->error = "Delete operation failed: " . $e->getMessage();
             return false;
         }
+    }
+    public function statistiques($name) {
+        $query = "SELECT   COUNT(*) AS $name FROM  $this->tableName ";
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }
 

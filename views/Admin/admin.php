@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
     <!-- https://getbootstrap.com/ -->
     <link rel="stylesheet" href="assets/css/templatemo-style.css">
+        <link rel="stylesheet" href="assets/css/templatemo-video-catalog.css">
     <!-- font awsome -->
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>  
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">  
@@ -28,30 +29,20 @@
   <body id="reportsPage">
   <nav class="navbar navbar-expand-xl">
             <div class="container h-100">
-                <a class="navbar-brand" href="index.html">
-                    <h1 class="tm-site-title mb-0">Wiki<sup>TM</sup></h1>
-                </a>
-                <button class="navbar-toggler ml-auto mr-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                  
-                </button>
+       
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link tm-site d-block" href="login.html">Admin</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link d-block" href="login.html">Admin</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link d-block" href="login.html ">Admin</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link d-block" href="login.html">Admin, <b>Logout</b></a>
-                        </li>
+                <div class="tm-categories-container mt-">
+                        <a href="?route=home" style="border:none;text-decoration: none;"><h3 class="text-white tm-categories-text">Wiki<sup>TM</sup></h3></a>
+                    <ul class="nav tm-category-list">
+                    <li class="nav-item tm-category-item"><a href="?route=home" class=" tm-categories-link ">home</a></li>
+                    <li class="nav-item tm-category-item"><a href="?route=about" class=" tm-categories-link">About</a></li>
+                    <li class="nav-item tm-category-item"><a href="?route=contact" class=" tm-categories-link ">Contact</a></li>
+                    <li class="nav-item tm-category-item"><a href="?route=author" style="text-decoration: none;" class=" tm-category-link ">Create wiki</a></li>
+                    <li class="nav-item tm-category-item"><a href="?route=profile" class=" tm-categories-link">Profile</a></li>
+                    <li class="nav-item tm-category-item"><a href="?route=dash" style="text-decoration: none;" class=" tm-category-link active">Dashboard</a></li>
+                        
                     </ul>
-                </div>
+                </div> 
             </div>
         </nav>
         <div class="container">
@@ -69,7 +60,7 @@
         
       <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3 tm-block-col">
           <div class="tm-bg-primary-dark tm-block tm-block-product-categories">
-              <h2 class="tm-block-title"> Categories</h2>
+              <h2 class="tm-block-title"> Categories : <?php  echo $count_cats[0]['cat_count'] ?></h2>
               <div class="tm-product-table-container">
               <table class="table table-hover tm-table-small tm-product-table">
                   <thead>
@@ -104,32 +95,37 @@
 
           <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 tm-block-col">
             <div class="tm-bg-primary-dark tm-block tm-block-products" style="min-height: 652px !important;">
-              <h2 class="tm-block-title">Wikis</h2>
+              <h2 class="tm-block-title">Wikis : <?php  echo $count_wikis[0]['wiki_count'] ?></h2>
               <div class="tm-product-table-container" style="max-height: 526px;">
                 <table class="table table-hover tm-table-small tm-product-table">
                   <thead>
                     <tr>
+                      <th scope="col"></th>
                       <th scope="col">Title</th>
-                      <th scope="col">Author</th>
-                      <th scope="col">Category</th>
                       <th scope="col">Created At</th>
                       <th scope="col">Archifier</th>
+                      <th scope="col">diArchifier</th>
                      
                     </tr>
                   </thead>
                   <tbody>
+                  <?php foreach($wikis as $wiki) : ?>
                     <tr>
-                   
-                      <td class="tm-product-name">Lorem Ipsum Product 1</td>
-                      <td>1,450</td>
-                      <td>550</td>
-                      <td>28 March 2019</td>
+                    <td class="tm-product-name" style="font-size: xx-small;"><a href="?route=content&contentid=<?php  echo $wiki['wiki_id'] ?>"><i class='fa fa-reply-all' style='color:#394e64'></i></a></td>
+                      <td class="tm-product-name"><?php echo $wiki['title']; ?></td>
+                      <td><?php echo $wiki['created_at']; ?></td>
                       <td>
-                        <a href="#" class="tm-product-delete-link">
-                          <i class="far fa-trash-alt tm-product-delete-icon"></i>
+                        <a href="?route=wiki&archifierid=<?php  echo $wiki['wiki_id'] ?>" class="tm-product-delete-link">
+                          <i class="far fa-trash-alt tm-product-delete-icon" style='color:red'></i>
+                        </a>
+                      </td>
+                      <td>
+                        <a href="?route=wiki&diafid=<?php  echo $wiki['wiki_id'] ?>" class="tm-product-delete-link">
+                          <i class="far fa-trash-alt tm-product-delete-icon" ></i>
                         </a>
                       </td>
                     </tr>
+                    <?php endforeach; ?>
                   </tbody>
                 </table>
               </div>
@@ -138,7 +134,7 @@
 
           <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3 tm-block-col">
             <div class="tm-bg-primary-dark tm-block tm-block-product-categories">
-              <h2 class="tm-block-title">Tages</h2>
+              <h2 class="tm-block-title">Tages : <?php  echo $count_tags[0]['tag_count'] ?></h2>
               <div class="tm-product-table-container">
               <table class="table table-hover tm-table-small tm-product-table">
                   <thead>

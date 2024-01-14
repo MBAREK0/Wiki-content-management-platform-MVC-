@@ -290,6 +290,7 @@ a:hover {
     color:aliceblue;
     padding: 10px;
     border-bottom: 3px solid transparent;
+    text-decoration: none !important;
 }
 .tm-category-link.active,
 .tm-category-link:hover {
