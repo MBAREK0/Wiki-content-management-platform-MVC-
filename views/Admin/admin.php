@@ -110,8 +110,8 @@
                       <th scope="col"></th>
                       <th scope="col">Title</th>
                       <th scope="col">Created At</th>
-                      <th scope="col">Archifier</th>
-                      <th scope="col">diArchifier</th>
+                      <th scope="col">Archived</th>
+                     
                      
                     </tr>
                   </thead>
@@ -121,16 +121,19 @@
                     <td class="tm-product-name" style="font-size: xx-small;"><a href="?route=content&contentid=<?php  echo $wiki['wiki_id'] ?>"><i class='fa fa-reply-all' style='color:#394e64'></i></a></td>
                       <td class="tm-product-name"><?php echo $wiki['title']; ?></td>
                       <td><?php echo $wiki['created_at']; ?></td>
+                      <?php if($wiki['archived_at'] === NULL) {?>
                       <td>
                         <a href="?route=wiki&archifierid=<?php  echo $wiki['wiki_id'] ?>" class="tm-product-delete-link">
                           <i class="far fa-trash-alt tm-product-delete-icon" style='color:red'></i>
                         </a>
                       </td>
+                      <?php }else{ ?>
                       <td>
                         <a href="?route=wiki&diafid=<?php  echo $wiki['wiki_id'] ?>" class="tm-product-delete-link">
                           <i class="far fa-trash-alt tm-product-delete-icon" ></i>
                         </a>
                       </td>
+                      <?php } ?>
                     </tr>
                     <?php endforeach; ?>
                   </tbody>
